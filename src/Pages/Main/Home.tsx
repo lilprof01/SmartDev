@@ -3,6 +3,7 @@ import { Gradient, ThemeToggle } from "@/Components/UI";
 import FeatureCard from "@/Components/UI/FeaturesCard";
 import { useEffect, useRef } from "react";
 import { Linkedin, Instagram, Twitter } from "lucide-react";
+import Stack from "@/Components/Main/Stack";
 
 
 const Home = () => {
@@ -29,13 +30,13 @@ const Home = () => {
       {/* Features Section */}
       <section className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-          Why Choose Us?
+          What You'll Get
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           <FeatureCard
             icon="Code"
             title="Custom Development"
-            description="We build tailored solutions to meet your unique business needs."
+            description="Custom built solutions to meet your unique business needs."
           />
           <FeatureCard
             icon="Smartphone"
@@ -49,6 +50,8 @@ const Home = () => {
           />
         </div>
       </section>
+
+      <Stack />
 
       <Projects />
       <Contact />

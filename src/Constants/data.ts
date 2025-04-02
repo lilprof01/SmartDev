@@ -1,13 +1,17 @@
-export const libraries = [
-    "Zustand",
-    "React Router",
-    "React Query",
-    "React Hook Form",
-    "Sonner",
-    "Lucide-React",
-    "Tailwind CSS",
-    "TypeScript",
-    "axios",
-    "Framer Motion",
-    "Zod",
-]
+interface StackItem {
+    name: string;
+}
+
+export const stack: StackItem[] = [
+    { name: "React" },
+    { name: "TypeScript" },
+    { name: "JavaScript" },
+    { name: "Tailwind CSS" },
+    { name: "Node.js" },
+    { name: "Python" },
+    { name: "HTML5" },
+    { name: "CSS3" },
+    { name: "Bootstrap" },
+    { name: "Firebase" },
+    { name: "Git" },
+];

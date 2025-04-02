@@ -3,7 +3,7 @@ const About = () => {
   return (
     <section className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-          About Us
+          About Me
         </h2>
         <p className="text-center text-gray-600 dark:text-gray-300 text-lg sm:text-xl leading-relaxed">
           We are a team of passionate developers, designers, and strategists

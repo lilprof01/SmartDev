@@ -11,8 +11,8 @@ const Hero = () => {
             .
           </h1>
           <p className="text-sm sm:text-xl mt-4">
-            An online presence is essential for any business today. We'll help
-            you create a stunning website that drives results.
+            An online presence is essential for any business today. Get
+            you a custom made stunning website that drives results.
           </p>
           <button
             id="btn"
