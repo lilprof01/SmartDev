@@ -34,54 +34,53 @@
   --color-main: var(--main);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --animate-blink: blink 0.8s infinite ease;
 }
 
-* {
-  @apply outline-none;
+.send{
+  text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-html {
-  @apply bg-background text-main font-sans scroll-smooth;
+.blink {
+  animation: var(--animate-blink);
 }
 
-.main {
-  @apply max-w-[90%] 2xl:max-w-[1280px] mx-auto;
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.layout {
-  @apply max-w-[90%] md:max-w-[700px] mx-auto;
+html{
+  @apply text-main font-sans scroll-smooth;
 }
 
-.center {
-  @apply flex items-center justify-center;
+/* From Uiverse.io by zjssun */ 
+#btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-shadow: none;
+  cursor: pointer;
+  box-shadow: transparent;
+  transition: 0.5s ease;
+  user-select: none;
 }
 
-button,
-.btn {
-  @apply text-sm cursor-pointer font-semibold font-sora flex items-center justify-center gap-2 disabled:opacity-50;
-}
-
-.btn-primary {
-  @apply bg-primary text-white dark:text-black;
-}
-
-.input {
-  @apply bg-foreground text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-primary invalid:border-red-500;
-}
-.message {
-  @apply bg-foreground text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-primary invalid:border-red-500;
-}
-.input-2 {
-  @apply  text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:border-primary invalid:border-red-500;
-}
-.message-2 {
-  @apply  text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:border-primary invalid:border-red-500;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  @apply hidden;
-}
-
-.hide-scrollbar::-webkit-scrollbar-thumb {
-  @apply hidden;
+#btn:hover {
+  color: #ffffff;
+  background: #1447e6;
+  /* border: 1px solid #1447e6; */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 2px #1447e6, 0 0 10px #1447e6, 0 0 10px #1447e6,
+    0 0 100px #1447e6;
 }

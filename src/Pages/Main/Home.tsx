@@ -1,49 +1,82 @@
-import { useCountStore } from "@/Stores";
-import { ThemeToggle } from "@/Components/UI";
-import { ActionButtons, Libraries } from "@/Components/Main";
-import { Github } from "lucide-react";
+import { About, Contact, Header, Hero, Projects } from "@/Components/Main";
+import { Gradient, ThemeToggle } from "@/Components/UI";
+import FeatureCard from "@/Components/UI/FeaturesCard";
+import { useEffect, useRef } from "react";
+import { Linkedin, Instagram, Twitter } from "lucide-react";
 
 
 const Home = () => {
-  const { count } = useCountStore();
+  const mainRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    mainRef.current?.classList.add("scale-150", "opacity-50");
+    const timeout = setTimeout(() => {
+      mainRef.current?.classList.remove("scale-150", "opacity-50");
+    }, -100);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
-    <div className="layout relative flex flex-col gap-2 min-h-[100dvh]">
-      <header className="w-full h-[60px] flex justify-between items-center">
-        <ThemeToggle />
-        <a
-          href="https://github.com/learnwithjacksun/jacksun-react-template"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary px-4 py-2 rounded-full gap-2"
-        >
-          <Github size={20} />
-          <span>Use Template</span>
-        </a>
-      </header>
-      <div className="center flex flex-col gap-4 text-center border-b border-line py-7">
-        <div className="center gap-2">
-          <img
-            src="/react.svg"
-            alt="logo"
-            width={80}
-            height={80}
-            className="hover:rotate-120 transition-all duration-300"
+    <main
+      ref={mainRef}
+      className="relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:pt-16 sm:px-16 transition-all duration-500"
+    >
+      <Header />
+      <Gradient />
+      <Hero />
+      <About />
+      {/* Features Section */}
+      <section className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+          Why Choose Us?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <FeatureCard
+            icon="Code"
+            title="Custom Development"
+            description="We build tailored solutions to meet your unique business needs."
           />
-          <div className="h-[80px] w-[80px] bg-secondary rounded-xl border border-line text-4xl font-sora font-bold flex items-center justify-center">{count}</div>
+          <FeatureCard
+            icon="Smartphone"
+            title="Responsive Design"
+            description="Your website will look great on any device, from desktop to mobile."
+          />
+          <FeatureCard
+            icon="Rocket"
+            title="Fast Performance"
+            description="Optimized for speed to ensure a seamless user experience."
+          />
         </div>
-        <div>
-          <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-purple-500 text-4xl md:text-5xl font-sora font-bold">Jacksun React Template </h1>
-          <p className="text-muted">
-            A template for building a React app with Tailwind CSS and TypeScript
+      </section>
+
+      <Projects />
+      <Contact />
+
+      {/* Footer Section */}
+      <footer className="mt-20 bg-blue-700 text-white dark:bg-gray-900 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-row justify-between items-center">
+          <p className="text-sm">
+            © {new Date().getFullYear()} Your Company. All rights reserved.
           </p>
+
+          <div className="flex gap-4">
+            <a href="#" className="text-white dark:text-blue-500">
+              <Linkedin size={24} />
+            </a>
+            <a href="#" className="text-white dark:text-blue-500">
+              <Instagram size={24} />
+            </a>
+            <a href="#" className="text-white dark:text-blue-500">
+              <Twitter size={24} />
+            </a>
+          </div>
         </div>
+        
+      </footer>
 
-        <ActionButtons />
-      </div>
-
-      <Libraries />
-    </div>
+      <ThemeToggle className="fixed bottom-5 right-5 sm:hidden hover:cursor-pointer" />
+    </main>
   );
 };
 
