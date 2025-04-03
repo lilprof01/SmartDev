@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false });
   const [formStatus, setFormStatus] = useState("");
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,17 +50,24 @@ const Contact = () => {
   };
   return (
     // Contact Section
-    <section className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10">
+    <motion.section
+      ref={sectionRef}
+      className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
+      initial={{ opacity: 0, y: 80 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
+      transition={{ duration: 1 }}
+    >
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-        Contact Us
+        Contact
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {/* Contact Info */}
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-bold">Get in Touch</h3>
           <p className="text-gray-600 dark:text-gray-300">
-            We'd love to hear from you! Reach out to us using the form or the
-            contact details below.
+            Got an idea you want to build, or you want us to collaborate on a
+            project! Reach out to me using the form or the contact details
+            below.
           </p>
           <a
             href="tel:+2348141745050"
@@ -100,12 +110,32 @@ const Contact = () => {
             rows={5}
             className="px-4 py-3 rounded-lg shadow-md border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-500 resize-none"
           ></textarea>
-          <button
+          {/* <button
             type="submit"
             className="px-6 py-3 rounded-full shadow-lg bg-blue-700 text-white dark:bg-transparent hover:dark:bg-blue-700 dark:border dark:border-gray-300 transition-all duration-300 w-[50%] lg:w-[30%] ml-auto cursor-pointer send"
           >
             Send Message
+          </button> */}
+          <button type="submit" className="send-btn w-[45%] lg:w-[25%] ml-auto">
+            <div className="svg-wrapper-1">
+              <div className="svg-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <span>Send</span>
           </button>
+
           {formStatus && (
             <p className="text-center text-sm mt-4 text-blue-700 dark:text-blue-500">
               {formStatus}
@@ -113,7 +143,7 @@ const Contact = () => {
           )}
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

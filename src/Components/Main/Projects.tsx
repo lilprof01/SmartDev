@@ -1,6 +1,7 @@
 import CallToAction from "@/Components/UI/CallToAction";
 import { Gradient } from "../UI";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface projectProps {
   title: string;
@@ -76,24 +77,43 @@ const Projects = () => {
 
   const handleSelected = (name: string) => {
     setSelected(name);
-  }
+  };
+
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false });
 
   return (
-    <section className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:p-16 transition-all duration-500">
+    <motion.section
+      ref={sectionRef}
+      className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:p-16 transition-all duration-500"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 1 }}
+    >
       <Gradient />
 
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-start gap-2 h-full w-full  text-center sm:p-8 max-w-5/6 lg:max-w-4/6 mx-auto select-none">
-        <h1 className="font-bold text-4xl sm:text-6xl">
+        <motion.h1
+          className="font-bold text-4xl sm:text-6xl"
+          initial={{ opacity: 0, y: -50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+          transition={{ duration: 1 }}
+        >
           Explore{" "}
           <span className="bg-gradient-to-r from-blue-700 to-blue-900 dark:from-blue-700 dark:to-blue-700 bg-clip-text text-transparent hover:text-blue-900 dark:hover:text-blue-900 transition-all duration-500 cursor-pointer">
             Projects
           </span>
-        </h1>
-        <p className="text-sm sm:text-xl mt-4">
+        </motion.h1>
+        <motion.p
+          className="text-sm sm:text-xl mt-4"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           Discover the innovative solutions we've built to help businesses
           thrive.
-        </p>
+        </motion.p>
       </div>
       
       {/* Filter Section */}
@@ -114,9 +134,12 @@ const Projects = () => {
       {/* Projects Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className="relative bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:scale-105 hover:shadow-blue-300 dark:hover:shadow-blue-600 cursor-pointer transition-transform duration-300"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <img
               src={project.image}
@@ -137,7 +160,7 @@ const Projects = () => {
                 View Project
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -148,7 +171,7 @@ const Projects = () => {
         buttonText="Yes, I'm in"
         buttonLink="/contact"
       />
-    </section>
+    </motion.section>
   );
 };
 
