@@ -3,14 +3,14 @@ import { useRef } from "react";
 
 const About = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false });
+  const isInView = useInView(sectionRef, { once: true });
 
   return (
     <motion.section
       ref={sectionRef}
       className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 80 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
       transition={{ duration: 1 }}
     >
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">

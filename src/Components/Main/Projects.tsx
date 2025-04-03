@@ -80,7 +80,7 @@ const Projects = () => {
   };
 
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false });
+  const isInView = useInView(sectionRef, { once: true });
 
   return (
     <motion.section

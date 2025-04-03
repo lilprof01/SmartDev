@@ -1,7 +1,7 @@
 import { stack } from "@/Constants/data";
 import { ReactElement } from "react";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
-import { SiTailwindcss, SiTypescript, SiJavascript, SiFirebase, SiBootstrap } from "react-icons/si";
+import { SiTailwindcss, SiTypescript, SiJavascript, SiFirebase, SiBootstrap, SiFramer } from "react-icons/si";
 
 interface iconProps {
   icon: ReactElement;
@@ -19,6 +19,7 @@ const icons: iconProps[] = [
   { icon: <SiBootstrap /> },
   { icon: <SiFirebase /> },
   { icon: <FaGitAlt /> },
+  { icon: <SiFramer /> },
 ];
 
 const Stack = () => {

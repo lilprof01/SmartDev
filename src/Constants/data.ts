@@ -14,4 +14,5 @@ export const stack: StackItem[] = [
     { name: "Bootstrap" },
     { name: "Firebase" },
     { name: "Git" },
+    { name: "Framer Motion" },
 ];
