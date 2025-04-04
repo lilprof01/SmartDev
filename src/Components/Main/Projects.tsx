@@ -86,7 +86,7 @@ const Projects = () => {
     offset: ["start end", "start start"],
   })
 
-  const fade = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const fade = useTransform(scrollYProgress, [0, 1], [0.3, 1])
 
   return (
     <motion.section
