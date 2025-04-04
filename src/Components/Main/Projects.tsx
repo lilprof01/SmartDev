@@ -1,7 +1,7 @@
 import CallToAction from "@/Components/UI/CallToAction";
 import { Gradient } from "../UI";
 import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 interface projectProps {
   title: string;
@@ -80,15 +80,20 @@ const Projects = () => {
   };
 
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
+  const isInView = useInView(sectionRef, { once: false });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "start start"],
+  })
+
+  const fade = useTransform(scrollYProgress, [0, 1], [0, 1])
 
   return (
     <motion.section
       ref={sectionRef}
+      style={{ opacity: fade }}
+      transition={{ duration: 0.15 }}
       className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:p-16 transition-all duration-500"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 1 }}
     >
       <Gradient />
 
@@ -154,7 +159,7 @@ const Projects = () => {
                 {project.description}
               </p>
               <a
-                href={project.link}
+                href='#'
                 className="inline-block mt-4 px-4 py-2 bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300"
               >
                 View Project

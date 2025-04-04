@@ -1,17 +1,25 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const About = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end end"],
+  })
+
+  const fade = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1])
 
   return (
     <motion.section
       ref={sectionRef}
+      style={{
+        opacity: fade,
+        scale: scale,
+      }}
       className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
-      initial={{ opacity: 0, y: 80 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
-      transition={{ duration: 1 }}
     >
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
         About Me
