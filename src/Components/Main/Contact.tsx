@@ -8,12 +8,13 @@ const Contact = () => {
   const isInView = useInView(sectionRef, { once: false });
   const [formStatus, setFormStatus] = useState("");
 
+  // formspree form handler
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const resetTimeout = setTimeout(() => {
       setFormStatus("");
-    }, 5000);
+    }, 8000);
 
     try {
       const response = await axios.post(
@@ -110,12 +111,6 @@ const Contact = () => {
             rows={5}
             className="px-4 py-3 rounded-lg shadow-md border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-500 resize-none"
           ></textarea>
-          {/* <button
-            type="submit"
-            className="px-6 py-3 rounded-full shadow-lg bg-blue-700 text-white dark:bg-transparent hover:dark:bg-blue-700 dark:border dark:border-gray-300 transition-all duration-300 w-[50%] lg:w-[30%] ml-auto cursor-pointer send"
-          >
-            Send Message
-          </button> */}
           <button type="submit" className="send-btn w-[45%] lg:w-[25%] ml-auto">
             <div className="svg-wrapper-1">
               <div className="svg-wrapper">

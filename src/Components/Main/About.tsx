@@ -13,6 +13,8 @@ const About = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
+    // About me section
+    // TODO: add a button that asks to know more about me
     <motion.section
       ref={sectionRef}
       style={{

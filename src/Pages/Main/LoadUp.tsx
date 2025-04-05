@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const LoadUp = () => {
+  // TODO: implement loader to help load data and web images before navigation
   const mainRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
   const textArray: Array<string> = ["Welcome🙂"]; // Array of texts to type out
@@ -59,12 +60,10 @@ const LoadUp = () => {
   }, [isComplete, navigate]);
 
   return (
+    // LoadUp component before main page
     <motion.main
       ref={mainRef}
       className="h-screen flex flex-col justify-start items-center transition-all duration-500 pt-10"
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ duration: 1 }}
     >
       <div className="absolute top-0 z-[-2] h-screen w-screen dark:bg-black bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
       <div className="flex flex-col items-center gap-4 relative w-full h-[70%] p-20 lg:p-10">

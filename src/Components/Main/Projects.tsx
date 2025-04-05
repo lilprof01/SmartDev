@@ -11,9 +11,10 @@ interface projectProps {
   tags?: string[];
 }
 
+// TODO: find a way to display tags on project cards
 const projects: projectProps[] = [
   {
-    title: "E-Commerce Platform",
+    title: "WoodMetal",
     description:
       "A fully functional e-commerce platform with payment integration.",
     image: "/wm2.png",
@@ -21,41 +22,41 @@ const projects: projectProps[] = [
     tags: ["eCommerce", "React", "Node.js", "Stripe", "All"],
   },
   {
-    title: "Portfolio Website",
+    title: "My Portfolio",
     description:
-      "A sleek and modern portfolio website for showcasing your work.",
+      "A sleek and modern portfolio website created to showcase my skills and expertise.",
     image: "/portfolio.png",
-    link: "/projects/portfolio",
-    tags: ["Portfolio", "React", "Tailwind CSS", "All"],
+    link: "/",
+    tags: ["Portfolio", "React", "Tailwind CSS", "Zustand", "Framer Motion", "All"],
   },
   {
-    title: "Fintech App",
+    title: "PAYXYZ",
     description:
       "A scalable social media app with real-time chat and notifications.",
     image: "/xyzhome.png",
     link: "/projects/social",
-    tags: ["Fintech", "React", "Node.js", "Firebase", "All"],
+    tags: ["Fintech", "HTML", "CSS", "Vanila JS", "All"],
   },
   {
-    title: "Game App",
+    title: "lexi",
     description: "A responsive blog platform with a content management system.",
     image: "/lexi3.png",
     link: "/projects/blog",
-    tags: ["Blog", "React", "Firebase", "Markdown", "All"],
+    tags: ["Blog", "React", "Firebase", "Markdown", "All", "Game"],
   },
   {
-    title: " Landing Page",
+    title: " AutoWorld",
     description:
       "A scalable social media app with real-time chat and notifications.",
     image: "/AutoWorld.png",
     link: "/projects/social",
-    tags: ["Fintech", "React", "Node.js", "Firebase", "All"],
+    tags: ["Fintech", "React", "TailwindCSS", "All", "Landing page"],
   },
   {
-    title: "Game App",
+    title: "Space Tour",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/lexi2.png",
+    image: "/space-tour.png",
     link: "/projects/social",
     tags: ["Fintech", "React", "Node.js", "Firebase", "All"],
   },
