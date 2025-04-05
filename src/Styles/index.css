@@ -37,6 +37,10 @@
   --animate-blink: blink 0.8s infinite ease;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .send{
   text-wrap: nowrap;
   display: flex;

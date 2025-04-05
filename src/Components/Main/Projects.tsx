@@ -1,6 +1,6 @@
 import CallToAction from "@/Components/UI/CallToAction";
 import { Gradient } from "../UI";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 interface projectProps {
@@ -16,7 +16,7 @@ const projects: projectProps[] = [
     title: "E-Commerce Platform",
     description:
       "A fully functional e-commerce platform with payment integration.",
-    image: "/code.jpg",
+    image: "/wm2.png",
     link: "/projects/ecommerce",
     tags: ["eCommerce", "React", "Node.js", "Stripe", "All"],
   },
@@ -24,38 +24,38 @@ const projects: projectProps[] = [
     title: "Portfolio Website",
     description:
       "A sleek and modern portfolio website for showcasing your work.",
-    image: "/code.jpg",
+    image: "/portfolio.png",
     link: "/projects/portfolio",
     tags: ["Portfolio", "React", "Tailwind CSS", "All"],
-  },
-  {
-    title: "Blog Platform",
-    description: "A responsive blog platform with a content management system.",
-    image: "/code.jpg",
-    link: "/projects/blog",
-    tags: ["Blog", "React", "Firebase", "Markdown", "All"],
   },
   {
     title: "Fintech App",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/code.jpg",
+    image: "/xyzhome.png",
     link: "/projects/social",
     tags: ["Fintech", "React", "Node.js", "Firebase", "All"],
   },
   {
-    title: " App",
+    title: "Game App",
+    description: "A responsive blog platform with a content management system.",
+    image: "/lexi3.png",
+    link: "/projects/blog",
+    tags: ["Blog", "React", "Firebase", "Markdown", "All"],
+  },
+  {
+    title: " Landing Page",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/code.jpg",
+    image: "/AutoWorld.png",
     link: "/projects/social",
     tags: ["Fintech", "React", "Node.js", "Firebase", "All"],
   },
   {
-    title: "Social Media App",
+    title: "Game App",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/code.jpg",
+    image: "/lexi2.png",
     link: "/projects/social",
     tags: ["Fintech", "React", "Node.js", "Firebase", "All"],
   },
@@ -83,29 +83,15 @@ const Projects = () => {
   const inView = useInView(sectionRef, { once: false });
   const cardView = useInView(cardRef, { once: false });
 
-  // Debugging: Log the ref and inView state
-  useEffect(() => {
-    console.log("textRef.current:", textRef.current);
-    console.log("inView:", inView);
-  }, [inView]);
-
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "start center"],
   });
-  // const { scrollYProgress: cardScrollYProgress } = useScroll({
-  //   target: cardRef,
-  //   offset: ["start start", "end end"],
-  // });
 
   // Animation for the section container and children
   const fade = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
   const moveUp = useTransform(scrollYProgress, [0, 1], ["80%", "0%"]);
   const moveDown = useTransform(scrollYProgress, [0, 1], ["-80%", "0%"]);
-
-  // Animation for the cards
-  // const cardFade = useTransform(cardScrollYProgress, [0, 1], [0.2, 1]);
-  // const cardScale = useTransform(cardScrollYProgress, [0, 1], [0.9, 1]);
 
   return (
     <motion.section
@@ -147,8 +133,7 @@ const Projects = () => {
           style={{ opacity: fade, y: moveUp }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Discover the innovative solutions we've built to help businesses
-          thrive.
+          Here are some of the projects I've worked on. Click on any project to view.
         </motion.p>
       </div>
 
@@ -187,7 +172,7 @@ const Projects = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-cover object-center"
             />
             <div className="p-6 flex flex-col text-center justify-between items-center">
               <h3 className="text-xl font-bold group-hover:text-blue-700 dark:group-hover:text-blue-500 transition-colors duration-300">

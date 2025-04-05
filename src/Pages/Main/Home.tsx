@@ -64,13 +64,13 @@ const Home = () => {
           </p>
 
           <div className="flex gap-4">
-            <a href="#" className="text-white dark:text-blue-500">
+            <a href="https://www.linkedin.com/in/aniyajuwon-pelumi-a8168a296" target="_blank" className="text-white dark:text-blue-500">
               <Linkedin size={24} />
             </a>
-            <a href="#" className="text-white dark:text-blue-500">
+            <a href="https://www.instagram.com/sm_art_n_interiors?igsh=OGQ5ZDc2ODk2ZA==" target="_blank" className="text-white dark:text-blue-500">
               <Instagram size={24} />
             </a>
-            <a href="#" className="text-white dark:text-blue-500">
+            <a href="https://x.com/aniya_juwon" target="_blank" className="text-white dark:text-blue-500">
               <Twitter size={24} />
             </a>
           </div>

@@ -1,4 +1,4 @@
-import { motion, spring, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const About = () => {
@@ -21,8 +21,7 @@ const About = () => {
       }}
       className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
       transition={{
-        opacity: { type: spring, duration: 1 },
-        scale: { type: spring, duration: 1 },
+        delay: 3
       }}
     >
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
