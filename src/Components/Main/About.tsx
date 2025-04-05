@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, spring, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const About = () => {
@@ -6,11 +6,11 @@ const About = () => {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end end"],
+    offset: ["start end", "start center"],
   })
 
-  const fade = useTransform(scrollYProgress, [0, 1], [0, 1])
-  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1])
+  const fade = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
     <motion.section
@@ -20,6 +20,10 @@ const About = () => {
         scale: scale,
       }}
       className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
+      transition={{
+        opacity: { type: spring, duration: 1 },
+        scale: { type: spring, duration: 1 },
+      }}
     >
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
         About Me

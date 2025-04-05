@@ -1,6 +1,6 @@
 import CallToAction from "@/Components/UI/CallToAction";
 import { Gradient } from "../UI";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 interface projectProps {
@@ -74,19 +74,38 @@ const selector = [
 const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [selected, setSelected] = useState("All");
-
   const handleSelected = (name: string) => {
     setSelected(name);
   };
-
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false });
+  const cardRef = useRef(null);
+  const textRef = useRef<HTMLDivElement>(null); // Ensure correct type
+  const inView = useInView(sectionRef, { once: false });
+  const cardView = useInView(cardRef, { once: false });
+
+  // Debugging: Log the ref and inView state
+  useEffect(() => {
+    console.log("textRef.current:", textRef.current);
+    console.log("inView:", inView);
+  }, [inView]);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "start start"],
-  })
+    offset: ["start end", "start center"],
+  });
+  // const { scrollYProgress: cardScrollYProgress } = useScroll({
+  //   target: cardRef,
+  //   offset: ["start start", "end end"],
+  // });
 
-  const fade = useTransform(scrollYProgress, [0, 1], [0.3, 1])
+  // Animation for the section container and children
+  const fade = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
+  const moveUp = useTransform(scrollYProgress, [0, 1], ["80%", "0%"]);
+  const moveDown = useTransform(scrollYProgress, [0, 1], ["-80%", "0%"]);
+
+  // Animation for the cards
+  // const cardFade = useTransform(cardScrollYProgress, [0, 1], [0.2, 1]);
+  // const cardScale = useTransform(cardScrollYProgress, [0, 1], [0.9, 1]);
 
   return (
     <motion.section
@@ -98,37 +117,56 @@ const Projects = () => {
       <Gradient />
 
       {/* Hero Section */}
-      <div className="flex flex-col items-center justify-start gap-2 h-full w-full  text-center sm:p-8 max-w-5/6 lg:max-w-4/6 mx-auto select-none">
+      <div
+        ref={textRef} // Ensure textRef is assigned here
+        className="flex flex-col items-center justify-start gap-2 h-full w-full text-center sm:p-8 lg:max-w-4/6 mx-auto select-none"
+      >
         <motion.h1
-          className="font-bold text-4xl sm:text-6xl"
-          initial={{ opacity: 0, y: -50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
-          transition={{ duration: 1 }}
+          className="font-bold text-4xl sm:text-6xl overflow-hidden whitespace-nowrap"
+          style={{ opacity: fade, y: moveDown }}
+          initial={{ width: "0" }}
+          animate={inView ? { width: "100%" } : { width: "0" }}
+          transition={{ duration: 1, delay: 0.3 }}
         >
           Explore{" "}
-          <span className="bg-gradient-to-r from-blue-700 to-blue-900 dark:from-blue-700 dark:to-blue-700 bg-clip-text text-transparent hover:text-blue-900 dark:hover:text-blue-900 transition-all duration-500 cursor-pointer">
+          <motion.span
+            style={{
+              overflow: "hidden",
+              whiteSpace: "nowrap",
+            }}
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+            className="bg-gradient-to-r from-blue-700 to-blue-900 dark:from-blue-700 dark:to-blue-700 bg-clip-text text-transparent hover:text-blue-900 dark:hover:text-blue-900 transition-all duration-500 cursor-pointer"
+          >
             Projects
-          </span>
+          </motion.span>
         </motion.h1>
         <motion.p
           className="text-sm sm:text-xl mt-4"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          style={{ opacity: fade, y: moveUp }}
           transition={{ duration: 1, delay: 0.3 }}
         >
           Discover the innovative solutions we've built to help businesses
           thrive.
         </motion.p>
       </div>
-      
+
       {/* Filter Section */}
-      <div>
+      <div className="w-full">
         <ul className="flex justify-center flex-wrap gap-4 p-8">
           {selector.map((item, index) => (
             <li
               key={index}
-              onClick={() => {setFilteredProjects(filter(item.filter)); handleSelected(item.name)}}
-              className={`px-4 py-2 bg-[white] hover:text-white rounded-full cursor-pointer hover:bg-blue-800 transition-all duration-300 border-2 border-gray-400 z-10 ${selected === item.name ? "bg-blue-800 dark:bg-blue-800 text-white" : "dark:bg-transparent"}`}
+              onClick={() => {
+                setFilteredProjects(filter(item.filter));
+                handleSelected(item.name);
+              }}
+              className={`px-4 py-2 bg-[white] hover:text-white rounded-full cursor-pointer hover:bg-blue-800 transition-all duration-300 border-2 border-gray-400 z-10 ${
+                selected === item.name
+                  ? "bg-blue-800 dark:bg-blue-800 text-white"
+                  : "dark:bg-transparent"
+              }`}
             >
               {item.name}
             </li>
@@ -137,14 +175,14 @@ const Projects = () => {
       </div>
 
       {/* Projects Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div ref={cardRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={index}
-            className="relative bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:scale-105 hover:shadow-blue-300 dark:hover:shadow-blue-600 cursor-pointer transition-transform duration-300"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            className="relative bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-blue-300 dark:hover:shadow-blue-600 cursor-pointer transition-transform duration-300"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={cardView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 1 }}
           >
             <img
               src={project.image}
@@ -159,7 +197,7 @@ const Projects = () => {
                 {project.description}
               </p>
               <a
-                href='#'
+                href="#"
                 className="inline-block mt-4 px-4 py-2 bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300"
               >
                 View Project
@@ -173,7 +211,7 @@ const Projects = () => {
       <CallToAction
         title="Have a project in mind?"
         description="Let's discuss your ideas and I'll help bring them to life."
-        buttonText="Yes, I'm in"
+        buttonText="I'm in🤝"
         buttonLink="/contact"
       />
     </motion.section>
