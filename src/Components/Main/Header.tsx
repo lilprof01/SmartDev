@@ -17,23 +17,23 @@ const Header = () => {
           <Link to="/home">
             <Home
               size={30}
-              className="hover:cursor-pointer hover:shadow-lg hover:shadow-blue-700 hover:scale-110 transition-all duration-300 rounded-full"
+              className="hover:cursor-pointer hover:scale-120 transition-all duration-300 rounded-full"
             />
           </Link>
           <Link to="/about">
             <UserCircleIcon
               size={30}
-              className="hover:cursor-pointer hover:shadow-lg hover:shadow-blue-700 hover:scale-110 transition-all duration-300 rounded-full"
+              className="hover:cursor-pointer hover:scale-120 transition-all duration-300 rounded-full"
             />
           </Link>
           <Link to="/projects">
             <CodeXml
               size={30}
-              className="hover:cursor-pointer hover:shadow-lg hover:shadow-blue-700 hover:scale-110 transition-all duration-300 rounded-full"
+              className="hover:cursor-pointer hover:scale-120 transition-all duration-300 rounded-full"
             />
           </Link>
         </div>
-        <ThemeToggle className="hidden sm:block hover:cursor-pointer hover:shadow-lg hover:shadow-blue-700 hover:scale-110 transition-all duration-300 rounded-full" />
+        <ThemeToggle className="hidden sm:block hover:cursor-pointer hover:scale-120 transition-all duration-300 rounded-full" />
       </div>
     </header>
   );

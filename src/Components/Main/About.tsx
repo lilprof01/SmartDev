@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const sectionRef = useRef(null);
@@ -7,7 +8,7 @@ const About = () => {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "start center"],
-  })
+  });
 
   const fade = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
@@ -23,30 +24,31 @@ const About = () => {
       }}
       className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
       transition={{
-        delay: 3
+        delay: 3,
       }}
     >
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
         About Me
       </h2>
       <p className="text-center text-gray-600 dark:text-gray-300 text-lg sm:text-xl leading-relaxed">
-        We are a team of passionate developers, designers, and strategists
-        dedicated to creating innovative digital solutions. Our mission is to
-        empower businesses to thrive in the digital age by delivering
-        high-quality, user-friendly, and visually stunning websites and
-        applications. With years of experience in the industry, we specialize
-        in crafting custom solutions tailored to meet the unique needs of our
-        clients. Whether you're a startup looking to establish your online
-        presence or an established business aiming to enhance your digital
-        footprint, we have the expertise to help you succeed.
+        My name is Aniyajuwon OluwaPelumi, but most of my friends call me Smart
+        and you can as well🙂. I am a software engineer majoring frontend web
+        development and also a freelance visual artist. I am passionate about
+        creating beautiful and user-friendly digital products that make a
+        positive impact on people's lives/businesses and as an artist it is
+        simply a lifestyle for me to create beautiful experiences for my clients
+        and users both on canvas🖼️ and on a webpage🌐.
       </p>
       <p className="text-center text-gray-600 dark:text-gray-300 text-lg sm:text-xl mt-6 leading-relaxed">
-        Our approach is simple yet effective: we listen, we innovate, and we
-        deliver. By combining cutting-edge technology with creative design, we
-        ensure that every project we undertake not only meets but exceeds our
-        clients' expectations. Let us help you transform your ideas into
+        My approach is simple but proven to be extremely effective: I listen,
+        innovate and deliver. By combining cutting-edge technology with creative
+        design, I ensure that every project I lay my hands on not only meets but
+        exceeds client's expectations. Let me help transform your ideas into
         reality and take your business to the next level.
       </p>
+      <div className="mt-10 mx-auto w-1/2 sm:w-1/3 text-right text-xl py-3 check relative overflow-hidden flex justify-center items-center align-middle whitespace-nowrap">
+        <Link to="/about">Check me out</Link>
+      </div>
     </motion.section>
   );
 };

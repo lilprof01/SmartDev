@@ -24,7 +24,7 @@ const projects: projectProps[] = [
   {
     title: "My Portfolio",
     description:
-      "A sleek and modern portfolio website created to showcase my skills and expertise.",
+      "A sleek and modern portfolio website to showcase my skills and expertise.",
     image: "/portfolio.png",
     link: "/",
     tags: ["Portfolio", "React", "Tailwind CSS", "Zustand", "Framer Motion", "All"],
@@ -39,10 +39,10 @@ const projects: projectProps[] = [
   },
   {
     title: "lexi",
-    description: "A responsive blog platform with a content management system.",
+    description: "A language practice app with interactive quizzes and games.",
     image: "/lexi3.png",
     link: "/projects/blog",
-    tags: ["Blog", "React", "Firebase", "Markdown", "All", "Game"],
+    tags: [ "React", "Firebase", "Markdown", "All", "Game"],
   },
   {
     title: " AutoWorld",
@@ -69,7 +69,7 @@ const selector = [
   { name: "All", filter: "All" },
   { name: "Fintech", filter: "Fintech" },
   { name: "eCommerce", filter: "eCommerce" },
-  { name: "Blog", filter: "Blog" },
+  { name: "Game", filter: "Game" },
 ];
 
 const Projects = () => {

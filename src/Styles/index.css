@@ -37,8 +37,28 @@
   --animate-blink: blink 0.8s infinite ease;
 }
 
-html{
-  scroll-behavior: smooth;
+.check::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: #1447e6;
+  transform-origin: left;
+  animation: check 2s ease-in-out infinite;
+}
+
+@keyframes check {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
 }
 
 .send{
