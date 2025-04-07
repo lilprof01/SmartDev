@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'sonner'
-import { Home } from '@/Pages/Main'
+import { Abouts, Home, LoadUp, Projects } from '@/Pages/Main'
 import { ScrollToTop } from '@/Components/UI'
 import { useEffect } from 'react'
 import { useThemeStore } from './Stores'
-import LoadUp from './Pages/Main/LoadUp'
+import Cursor from './Components/UI/Cursor'
 const App = () => {
   const fetchTheme = useThemeStore((state) => state.fetchTheme);
 
@@ -16,9 +16,12 @@ const App = () => {
     <>
     <Toaster />
     <ScrollToTop />
+    <Cursor />
       <Routes>
         <Route path="/" element={<LoadUp />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<Abouts />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </>
   )

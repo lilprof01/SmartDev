@@ -1,10 +1,10 @@
 
-const Projects = () => {
+const Abouts = () => {
   return (
     <div className="text-3xl dark:bg-[#121212] h-screen">
-      Projects
+      About
     </div>
   )
 }
 
-export default Projects
+export default Abouts

@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import { Linkedin, Instagram, Twitter } from "lucide-react";
 import Stack from "@/Components/Main/Stack";
 
-
 const Home = () => {
   const mainRef = useRef<HTMLElement>(null);
 
@@ -28,8 +27,8 @@ const Home = () => {
       <Hero />
       <About />
       {/* Features Section */}
-      <section className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+      <section className="flex flex-col mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 z-10">
           What You'll Get
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -57,25 +56,36 @@ const Home = () => {
       <Contact />
 
       {/* Footer Section */}
-      <footer className="mt-20 bg-blue-700 text-white dark:bg-gray-900 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-row justify-between items-center">
+      <footer className="flex mt-20 bg-blue-700 text-white dark:bg-gray-900 py-8 z-10">
+        <div className="w-full px-4 sm:px-8 flex flex-row justify-between items-center z-20">
           <p className="text-sm">
             © {new Date().getFullYear()} Your Company. All rights reserved.
           </p>
 
-          <div className="flex gap-4">
-            <a href="https://www.linkedin.com/in/aniyajuwon-pelumi-a8168a296" target="_blank" className="text-white dark:text-blue-500">
+          <div className="flex gap-4 z-10">
+            <a
+              href="https://www.linkedin.com/in/aniyajuwon-pelumi-a8168a296"
+              target="_blank"
+              className="text-white dark:text-blue-500"
+            >
               <Linkedin size={24} />
             </a>
-            <a href="https://www.instagram.com/sm_art_n_interiors?igsh=OGQ5ZDc2ODk2ZA==" target="_blank" className="text-white dark:text-blue-500">
+            <a
+              href="https://www.instagram.com/sm_art_n_interiors?igsh=OGQ5ZDc2ODk2ZA=="
+              target="_blank"
+              className="text-white dark:text-blue-500"
+            >
               <Instagram size={24} />
             </a>
-            <a href="https://x.com/aniya_juwon" target="_blank" className="text-white dark:text-blue-500">
+            <a
+              href="https://x.com/aniya_juwon"
+              target="_blank"
+              className="text-white dark:text-blue-500"
+            >
               <Twitter size={24} />
             </a>
           </div>
         </div>
-        
       </footer>
 
       <ThemeToggle className="fixed bottom-5 right-5 sm:hidden hover:cursor-pointer" />

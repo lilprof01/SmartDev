@@ -14,7 +14,7 @@ const Header = () => {
           <span className="text-blue-600">&gt;</span>
         </Link>
         <div className="flex justify-between items-center align-middle gap-8 space-x-4">
-          <Link to="/home">
+          <Link to="/home" onClick={() => window.scrollTo(0, 0)}>
             <Home
               size={30}
               className="hover:cursor-pointer hover:scale-120 transition-all duration-300 rounded-full"

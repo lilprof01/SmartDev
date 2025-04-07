@@ -18,7 +18,7 @@ const projects: projectProps[] = [
     description:
       "A fully functional e-commerce platform with payment integration.",
     image: "/wm2.png",
-    link: "/projects/ecommerce",
+    link: "https://woodmetal.vercel.app/",
     tags: ["eCommerce", "React", "Node.js", "Stripe", "All"],
   },
   {
@@ -34,14 +34,14 @@ const projects: projectProps[] = [
     description:
       "A scalable social media app with real-time chat and notifications.",
     image: "/xyzhome.png",
-    link: "/projects/social",
+    link: "https://payxyz.vercel.app/",
     tags: ["Fintech", "HTML", "CSS", "Vanila JS", "All"],
   },
   {
     title: "lexi",
-    description: "A language practice app with interactive quizzes and games.",
+    description: "A language practice web app with interactive quizzes and games.",
     image: "/lexi3.png",
-    link: "/projects/blog",
+    link: "https://lexi-flax.vercel.app/",
     tags: [ "React", "Firebase", "Markdown", "All", "Game"],
   },
   {
@@ -49,16 +49,16 @@ const projects: projectProps[] = [
     description:
       "A scalable social media app with real-time chat and notifications.",
     image: "/AutoWorld.png",
-    link: "/projects/social",
-    tags: ["Fintech", "React", "TailwindCSS", "All", "Landing page"],
+    link: "https://aw-landing.vercel.app/",
+    tags: ["React", "TailwindCSS", "All", "Landing page"],
   },
   {
     title: "Space Tour",
     description:
       "A scalable social media app with real-time chat and notifications.",
     image: "/space-tour.png",
-    link: "/projects/social",
-    tags: ["Fintech", "React", "Node.js", "Firebase", "All"],
+    link: "https://space-tour-orpin.vercel.app/",
+    tags: ["React", "Node.js", "Firebase", "All"],
   },
 ];
 
@@ -99,7 +99,7 @@ const Projects = () => {
       ref={sectionRef}
       style={{ opacity: fade }}
       transition={{ duration: 0.15 }}
-      className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:p-16 transition-all duration-500"
+      className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:p-16 transition-all duration-500 z-10"
     >
       <Gradient />
 
@@ -183,7 +183,8 @@ const Projects = () => {
                 {project.description}
               </p>
               <a
-                href="#"
+                href={project.link}
+                target="_blank"
                 className="inline-block mt-4 px-4 py-2 bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300"
               >
                 View Project

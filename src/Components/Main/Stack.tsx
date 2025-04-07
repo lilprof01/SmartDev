@@ -25,12 +25,12 @@ const icons: iconProps[] = [
 const Stack = () => {
   return (
     <div className="flex flex-col gap-6 py-10">
-      <h3 className="text-3xl font-sora font-bold text-center">Libraries & Tools</h3>
+      <h3 className="text-3xl font-bold text-center z-10">Libraries & Tools</h3>
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {stack.map((tool) => (
           <li
             key={tool.name}
-            className="group flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+            className="group flex flex-col items-center justify-center gap-2 p-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer z-10"
           >
             <div className="text-4xl text-blue-700 dark:text-blue-500 group-hover:text-blue-900 dark:group-hover:text-blue-300 transition-colors duration-300">
               {icons[stack.findIndex(t => t.name === tool.name)]?.icon}

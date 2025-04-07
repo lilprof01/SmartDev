@@ -10,6 +10,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        className="z-10"
       >
         <h1 className="font-bold text-4xl sm:text-6xl">
           Elevate your digital visibility with a stunning{" "}
@@ -25,7 +26,7 @@ const Hero = () => {
       </motion.div>
       <motion.button
         id="btn"
-        className="mt-8 px-6 py-3 rounded-full shadow-lg bg-blue-700 text-white dark:bg-transparent dark:border dark:border-gray-300 transition-all duration-300"
+        className="mt-8 px-6 py-3 rounded-full shadow-lg bg-blue-700 text-white dark:bg-transparent dark:border dark:border-gray-300 transition-all duration-300 z-10"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
