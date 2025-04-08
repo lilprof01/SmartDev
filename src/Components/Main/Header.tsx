@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "../UI";
 import { Home, UserCircleIcon, CodeXml } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header className="header fixed top-8 left-1/2 w-5/6 h-16 flex justify-center items-center bg-[#00000019] dark:bg-[#ffffff1b] transform -translate-x-1/2 rounded-full shadow-2xl backdrop-blur-lg z-50">
+    <motion.header
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.8 }}
+      className="header fixed top-8 left-1/2 w-5/6 h-16 flex justify-center items-center bg-[#00000019] dark:bg-[#ffffff1b] transform -translate-x-1/2 rounded-full shadow-2xl backdrop-blur-lg z-50"
+    >
       <div className="flex sm:justify-between justify-center items-center w-full px-4">
         <Link
           to="/home"
@@ -35,7 +41,7 @@ const Header = () => {
         </div>
         <ThemeToggle className="hidden sm:block hover:cursor-pointer hover:scale-120 transition-all duration-300 rounded-full" />
       </div>
-    </header>
+    </motion.header>
   );
 };
 

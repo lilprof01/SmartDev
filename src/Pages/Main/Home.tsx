@@ -4,6 +4,7 @@ import FeatureCard from "@/Components/UI/FeaturesCard";
 import { useEffect, useRef } from "react";
 import { Linkedin, Instagram, Twitter } from "lucide-react";
 import Stack from "@/Components/Main/Stack";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const mainRef = useRef<HTMLElement>(null);
@@ -31,7 +32,7 @@ const Home = () => {
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 z-10">
           What You'll Get
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           <FeatureCard
             icon="Code"
             title="Custom Development"
@@ -47,7 +48,7 @@ const Home = () => {
             title="Fast Performance"
             description="Optimized for speed to ensure a seamless user experience."
           />
-        </div>
+        </motion.div>
       </section>
 
       <Stack />
