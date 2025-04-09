@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <main
       ref={mainRef}
-      className="relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:pt-16 sm:px-16 transition-all duration-500"
+      className="relative dark:bg-black p-8 sm:pt-16 sm:px-16 transition-all duration-500"
     >
       <Header />
       <Gradient />
