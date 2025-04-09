@@ -113,7 +113,7 @@ const Projects = () => {
           style={{ opacity: fade, y: moveDown }}
           initial={{ width: "0" }}
           animate={inView ? { width: "100%" } : { width: "0" }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 2, delay: 0.3 }}
         >
           Explore{" "}
           <motion.span
