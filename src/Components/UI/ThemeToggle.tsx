@@ -8,7 +8,7 @@ interface ThemeToggleProps {
 const ThemeToggle:React.FC<ThemeToggleProps> = ({ className }) => {
   const { theme, toggleTheme } = useThemeStore();
   return (
-    <button className={`${className || ""}`} onClick={toggleTheme}>
+    <button className={`${className || ""} z-50`} onClick={toggleTheme}>
       {theme === "light" ? <Sun size={20} /> : <Moon size={20} />}
     </button>
   );
