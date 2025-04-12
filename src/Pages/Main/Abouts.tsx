@@ -1,4 +1,4 @@
-import { Header } from "@/Components/Main";
+import { Footer, Header } from "@/Components/Main";
 import {
   motion,
   useInView,
@@ -9,7 +9,7 @@ import {
 import { useRef } from "react";
 import { NotebookText, BriefcaseBusiness, Palette, Laptop, Gamepad2 } from "lucide-react";
 import { Gallery, Hero } from "@/Components/Main/AboutsPage";
-import { Divider, Gradient } from "@/Components/UI";
+import { Divider, Gradient, ThemeToggle } from "@/Components/UI";
 
 const Abouts = () => {
   return (
@@ -36,7 +36,33 @@ const Abouts = () => {
         cardNumber={3}
       />
       <Gallery />
-      <div className="h-screen mt-20 bg-[orange]"></div>
+      <div className="flex flex-col justify-start items-center gap-4  mt-20 p-6 z-20">
+        <h2 className="text-6xl z-20">Read on Medium</h2>
+        <div className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
+          <div className="flex flex-col gap-3">
+            <p className="text-sm opacity-75">April 12 2025</p>
+            <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
+          </div>
+          <p>2 mins read</p>
+        </div>
+        <div className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
+          <div className="flex flex-col gap-3">
+            <p className="text-sm opacity-75">April 12 2025</p>
+            <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
+          </div>
+          <p>2 mins read</p>
+        </div>
+        <div className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
+          <div className="flex flex-col gap-3">
+            <p className="text-sm opacity-75">April 12 2025</p>
+            <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
+          </div>
+          <p>2 mins read</p>
+        </div>
+      </div>
+      
+      <Footer />
+      <ThemeToggle className="fixed bottom-5 right-5 sm:hidden hover:cursor-pointer" />
     </main>
   );
 };
@@ -74,10 +100,11 @@ const Section: React.FC<SectionProps> = ({
       <h1 className="text-3xl sm:text-7xl text-center mb-4">{title}</h1>
       <div
         ref={sectionRef}
-        className="h-[150vh] relative flex justify-between items-start align-middle gap-8"
+        className="h-full relative flex justify-between items-start align-middle gap-8"
       >
         <Left title={cardTitle} image={image} cardNumber={cardNumber} />
         <Divider y={springY} />
+        <div className=""></div>
         <Right inView={inView} cardNumber={cardNumber} />
       </div>
     </section>
@@ -96,7 +123,7 @@ const Left: React.FC<LeftProps> = ({ title, image, cardNumber }) => {
       style={{
         backgroundImage: `url(${image})`,
       }}
-      className={`hidden bg-center bg-cover h-[500px] w-[50%] z-10 text-4xl sm:flex justify-end items-center gap-4 py-4 sticky top-0 rounded-3xl`}
+      className={`hidden bg-center bg-cover h-[400px] w-full z-10 text-4xl sm:flex justify-end items-center gap-4 py-4 sticky top-0 rounded-3xl`}
     >
       <div className="absolute h-full w-full bg-black/60 rounded-3xl"></div>
       <h2 className="z-10">{title}</h2>{" "}
@@ -135,13 +162,19 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
           <p>
             Hi, my name is Aniyajuwon Oluwapelumi IyanuOluwa but you can call me Smart. I hail from a small town in the West african coast, Nigeria to be precise.
           </p>
-          <p>
+          <p className="mt-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum
             quas qui nesciunt doloribus voluptatum aspernatur adipisci quos!
             Sapiente expedita consequuntur eaque illo similique nihil vero,
             perferendis consectetur. Possimus, nisi!
           </p>
-          <p>
+          <p className="mt-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum
+            quas qui nesciunt doloribus voluptatum aspernatur adipisci quos!
+            Sapiente expedita consequuntur eaque illo similique nihil vero,
+            perferendis consectetur. Possimus, nisi!
+          </p>
+          <p className="mt-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum
             quas qui nesciunt doloribus voluptatum aspernatur adipisci quos!
             Sapiente expedita consequuntur eaque illo similique nihil vero,
