@@ -26,27 +26,51 @@ interface JobsList {
 export const jobs: JobsList[] = [
     {
         position: "Frontend Developer",
-        company: "ABCD Company",
-        date: "2020-2022"
+        company: "Doyen",
+        date: "2020 - 2022"
     },
     {
         position: "Frontend Developer",
-        company: "EFGH Company",
-        date: "2020-2022"
+        company: "Cyberbuddies",
+        date: "2020 - 2022"
     },
     {
         position: "Frontend Developer",
-        company: "IJKL Company",
-        date: "2020-2022"
+        company: "FFS Agritech",
+        date: "2020 - 2022"
     },
     {
-        position: "Frontend Developer",
-        company: "MNOP Company",
-        date: "2020-2022"
+        position: "Asst. Manager",
+        company: "Delyiks",
+        date: "2020 - 2022"
     },
     {
-        position: "Frontend Developer",
-        company: "QRST Company",
-        date: "2020-2022"
+        position: "Teacher",
+        company: "Master-key",
+        date: "2020 - 2022"
     },
+]
+
+interface EducationItem {
+    institution: string;
+    discipline: string;
+    year: string;
+}
+
+export const Education: EducationItem[] = [
+    {
+        institution: "ALX",
+        discipline: "Software Engineering",
+        year: "2023 - 2025"
+    },
+    {
+        institution: "Federal University Oye-Ekiti",
+        discipline: "Agricultural Economics",
+        year: "2016 - 2023"
+    },
+    {
+        institution: "Angela Yu's academy",
+        discipline: "Web development",
+        year: "2023 - 2025"
+    }
 ]

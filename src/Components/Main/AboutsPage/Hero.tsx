@@ -56,15 +56,15 @@ const Hero = () => {
             style={{
               y: position,
             }}
-            className="h-[70px] w-[40px] rounded-full border-2 dark:border-white flex justify-center items-center z-10 mt-16 sm:mt-0"
+            className="h-[50px] w-[25px] rounded-full border-2 dark:border-white flex justify-center items-center z-10 mt-16 sm:mt-0"
           >
             <motion.div
               initial={{
-                y: "-30px",
-                opacity: 1,
+                y: "-20px",
+                opacity: 0.6,
               }}
-              animate={{ y: "30px", opacity: 0.8 }}
-              transition={{ repeat: Infinity, duration: 4 }}
+              animate={{ y: "15px", opacity: 0 }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeOut" }}
               className="h-1 w-1 bg-black dark:bg-white rounded-full"
             ></motion.div>
           </motion.div>
