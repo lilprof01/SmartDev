@@ -1,3 +1,4 @@
+// Data for stack
 interface StackItem {
     name: string;
 }
@@ -17,6 +18,7 @@ export const stack: StackItem[] = [
     { name: "Framer Motion" },
 ];
 
+// Data for jobs and experience
 interface JobsList {
     position: string;
     company: string;
@@ -27,30 +29,31 @@ export const jobs: JobsList[] = [
     {
         position: "Frontend Developer",
         company: "Doyen",
-        date: "2020 - 2022"
+        date: "2025"
     },
     {
         position: "Frontend Developer",
         company: "Cyberbuddies",
-        date: "2020 - 2022"
+        date: "2024 - 2025"
     },
     {
         position: "Frontend Developer",
         company: "FFS Agritech",
-        date: "2020 - 2022"
+        date: "2024"
     },
     {
         position: "Asst. Manager",
         company: "Delyiks",
-        date: "2020 - 2022"
+        date: "2023 - 2024"
     },
     {
         position: "Teacher",
         company: "Master-key",
-        date: "2020 - 2022"
+        date: "2015 - 2017"
     },
 ]
 
+// Data for eductaion
 interface EducationItem {
     institution: string;
     discipline: string;

@@ -8,9 +8,10 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { NotebookText, BriefcaseBusiness, Palette, Laptop, Gamepad2 } from "lucide-react";
-import { Gallery, Hero } from "@/Components/Main/AboutsPage";
+import { Blog, Gallery, Hero } from "@/Components/Main/AboutsPage";
 import { Divider, Gradient, ThemeToggle } from "@/Components/UI";
 
+// Abouts Page
 const Abouts = () => {
   return (
     <main className="relative dark:bg-black p-8 sm:pt-16 sm:px-16 transition-all duration-500">
@@ -20,48 +21,23 @@ const Abouts = () => {
       <Section
         title="About Me"
         cardTitle="Bio"
-        image="/new2.jpg"
+        image="https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540772/new2_xuyzci.jpg"
         cardNumber={1}
       />
       <Section
         title="Resume"
         cardTitle="Exp"
-        image="/laptop2.jpg"
+        image="https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540771/laptop2_rrjrrs.jpg"
         cardNumber={2}
       />
       <Section
         title="More!!!"
         cardTitle="Fun"
-        image="/laptop1.jpg"
+        image="https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540770/laptop1_y3yp6c.jpg"
         cardNumber={3}
       />
       <Gallery />
-      <div className="flex flex-col justify-start items-center gap-4  mt-20 p-6 z-20">
-        <h2 className="text-6xl z-20">Read on Medium</h2>
-        
-        <a href="https://medium.com/@adewumime/learning-is-good-but-practicing-is-essential-lexi-combines-both-and-makes-it-fun-eb5daf67d143" target="_blank" className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
-          <div className="flex flex-col gap-3">
-            <p className="text-sm opacity-75">April 12 2025</p>
-            <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
-          </div>
-          <p>2 mins read</p>
-        </a>
-        <a href="https://medium.com/@adewumime/learning-is-good-but-practicing-is-essential-lexi-combines-both-and-makes-it-fun-eb5daf67d143" target="_blank" className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
-          <div className="flex flex-col gap-3">
-            <p className="text-sm opacity-75">April 12 2025</p>
-            <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
-          </div>
-          <p>2 mins read</p>
-        </a>
-        <a href="https://medium.com/@adewumime/learning-is-good-but-practicing-is-essential-lexi-combines-both-and-makes-it-fun-eb5daf67d143" target="_blank" className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
-          <div className="flex flex-col gap-3">
-            <p className="text-sm opacity-75">April 12 2025</p>
-            <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
-          </div>
-          <p>2 mins read</p>
-        </a>
-      </div>
-      
+      <Blog />
       <Footer />
       <ThemeToggle className="fixed bottom-5 right-5 sm:hidden hover:cursor-pointer" />
     </main>
@@ -70,6 +46,7 @@ const Abouts = () => {
 
 export default Abouts;
 
+// Section component
 interface SectionProps {
   title: string;
   cardTitle: string;
@@ -94,7 +71,6 @@ const Section: React.FC<SectionProps> = ({
   const springY = useSpring(y, {
     stiffness: 40,
     damping: 15,
-    mass: 1,
   });
   return (
     <section className="mb-10">
@@ -112,6 +88,7 @@ const Section: React.FC<SectionProps> = ({
   );
 };
 
+// Left Div component
 interface LeftProps {
   title: string;
   image: string;
@@ -135,6 +112,7 @@ const Left: React.FC<LeftProps> = ({ title, image, cardNumber }) => {
   );
 };
 
+// Right div component
 interface RightProps {
   inView: boolean;
   cardNumber: number;

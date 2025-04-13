@@ -12,7 +12,7 @@ const Cursor = () => {
   window.addEventListener("mousemove", cursorPosition);
 
   return (
-    <div ref={cursorRef} className="fixed h-[200px] w-[200px] bg-blue-300 dark:bg-blue-500 z-[1] rounded-full blur-[100px] -translate-1/2 pointer-events-none duration-1000 transition-all ease-out">
+    <div ref={cursorRef} className="invisible lg:visible fixed h-[200px] w-[200px] bg-blue-300 dark:bg-blue-500 z-[1] rounded-full blur-[100px] -translate-1/2 pointer-events-none duration-1000 transition-all ease-out">
       
     </div>
   )

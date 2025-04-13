@@ -24,9 +24,9 @@ const Hero = () => {
             scale: fade,
           }}
           transition={{ duration: 2, ease: "easeInOut" }}
-          className="w-full h-full bg-[url(/light1.jpg)] dark:bg-[url(/hero3.jpg)] bg-cover bg-center z-10 text-center flex flex-col justify-center items-center gap-3"
+          className="w-full h-full bg-[url(https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540451/light1_kf0whi.jpg)] dark:bg-[url(https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540450/heromd_zdkv0r.jpg)] lg:dark:bg-[url(https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540450/hero3_eryuzq.jpg)] bg-cover bg-center z-10 text-center flex flex-col justify-center items-center gap-3"
         >
-          <motion.div style={{opacity: fade}} className="absolute h-full w-full bg-neutral-100/80 dark:bg-neutral-950/70"></motion.div>
+          <motion.div style={{opacity: fade}} className="absolute h-full w-full bg-neutral-100/50 dark:bg-neutral-950/70"></motion.div>
           <motion.h3
             initial={{ opacity: 0, x: -250 }}
             animate={{ opacity: 1, x: 0 }}

@@ -16,7 +16,7 @@ const LoadUp = () => {
 
   // Typing effect logic
   useEffect(() => {
-    if (isComplete) return; // Stop further updates if typing is complete
+    if (isComplete) return;
 
     const currentText = splitText(textArray[0]); // Split current text into graphemes
     if (charIndex < currentText.length) {
@@ -27,7 +27,6 @@ const LoadUp = () => {
 
       return () => clearTimeout(timeout);
     } else {
-      // Mark as complete after the last text is typed
       const completeTimeout = setTimeout(() => {setIsComplete(true);}, 400); // Delay before marking as complete
       return () => clearTimeout(completeTimeout);
     }
@@ -54,8 +53,8 @@ const LoadUp = () => {
     }, 2500); // Delay for navigation after fade-out
 
     return () => {
-      clearTimeout(fadeTimeout); // Clear fade timeout
-      clearTimeout(navigateTimeout); // Clear navigation timeout
+      clearTimeout(fadeTimeout);
+      clearTimeout(navigateTimeout);
     };
   }, [isComplete, navigate]);
 
@@ -75,6 +74,8 @@ const LoadUp = () => {
             <span className={`${!isComplete ? 'blink' : ''}`}>_</span>
           </h1>
         </div>
+
+        {/* loader animation */}
         <div className={`wrapper ${isComplete ? "fade-in" : "hidden"}`}>
           <div className="circle"></div>
           <div className="circle"></div>

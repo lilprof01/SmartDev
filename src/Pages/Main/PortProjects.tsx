@@ -30,7 +30,7 @@ const projects: projectProps[] = [
     title: "WoodMetal",
     description:
       "A fully functional e-commerce platform with payment integration.",
-    image: "/wm2.png",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538761/wm2_ayn43t.png",
     link: "https://woodmetal.vercel.app/",
     tags: ["eCommerce", "React", "Node.js", "Stripe", "All"],
     icon1: <FaReact size={20} />,
@@ -42,7 +42,7 @@ const projects: projectProps[] = [
     title: "My Portfolio",
     description:
       "A sleek and modern portfolio website to showcase my skills and expertise.",
-    image: "/portfolio.png",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/portfolio_zlhxws.png",
     link: "/",
     tags: [
       "Portfolio",
@@ -61,7 +61,7 @@ const projects: projectProps[] = [
     title: "PAYXYZ",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/xyzhome.png",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538764/xyzhome_myozd9.png",
     link: "https://payxyz.vercel.app/",
     tags: ["Fintech", "HTML", "CSS", "Vanila JS", "All"],
     icon1: <FaHtml5 size={20} />,
@@ -73,7 +73,7 @@ const projects: projectProps[] = [
     title: "lexi",
     description:
       "A language practice web app with interactive quizzes and games.",
-    image: "/lexi3.png",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538759/lexi3_lnbwqj.png",
     link: "https://lexi-flax.vercel.app/",
     tags: ["React", "Firebase", "Markdown", "All", "App"],
     icon1: <FaReact size={20} />,
@@ -85,7 +85,7 @@ const projects: projectProps[] = [
     title: " AutoWorld",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/AutoWorld.png",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/AutoWorld_y9ebfb.png",
     link: "https://aw-landing.vercel.app/",
     tags: ["React", "TailwindCSS", "All", "Landing page"],
     icon1: <FaReact size={20} />,
@@ -97,7 +97,7 @@ const projects: projectProps[] = [
     title: "Space Tour",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/space-tour.png",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/space-tour_f0luew.png",
     link: "https://space-tour-orpin.vercel.app/",
     tags: ["React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
@@ -109,8 +109,8 @@ const projects: projectProps[] = [
     title: "Adviser App",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/adviser.png",
-    link: "https://space-tour-orpin.vercel.app/",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538759/adviser_iaqtze.png",
+    link: "https://adviser-ten.vercel.app/",
     tags: ["App", "React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
     icon2: <SiTailwindcss size={20} />,
@@ -121,8 +121,8 @@ const projects: projectProps[] = [
     title: "Cart",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/cartex2.png",
-    link: "https://space-tour-orpin.vercel.app/",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/cartex2_vqyq92.png",
+    link: "https://cart-ex.vercel.app/",
     tags: ["eCommerce", "React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
     icon2: <SiTailwindcss size={20} />,
@@ -133,8 +133,8 @@ const projects: projectProps[] = [
     title: "Todo App",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "/todo.png",
-    link: "https://space-tour-orpin.vercel.app/",
+    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/todo_fgkoqh.png",
+    link: "https://to-do-ashen-chi.vercel.app/",
     tags: ["App", "React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
     icon2: <SiTailwindcss size={20} />,
@@ -143,6 +143,7 @@ const projects: projectProps[] = [
   },
 ];
 
+// function to render projects on filter
 const filter = (name: string) => {
   return projects.filter((project) => project.tags?.includes(name));
 };
@@ -153,6 +154,7 @@ const selector = [
   { name: "App", filter: "App" },
 ];
 
+// projects page project component - seperate with full projects
 const PortProjects = () => {
   const navigate = useNavigate();
   const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -276,7 +278,7 @@ const PortProjects = () => {
                   <a
                     href={project.link}
                     target="_blank"
-                    className="hover:underline transition-all duration-500 text-xs w-full"
+                    className="hover:text-blue-600 underline transition-all duration-300 text-xs w-full"
                   >
                     View Project
                   </a>
