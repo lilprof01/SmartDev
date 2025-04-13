@@ -228,7 +228,7 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
               Tech <Laptop size={20} />
             </span>{" "}
             - I extremely love to write code, but I doubt codes share the same
-            love for me. I have absolutely no background at all in tech, as a
+            love for me lol, but I love it still🙂. I have absolutely no background at all in tech, as a
             matter of fact I studied Agric, funny right? But I developed a
             passion for tech and I nurtured that passion and protected it, and
             today I am slowly able to build things I used to see on the net and
