@@ -1,13 +1,7 @@
 import CallToAction from "@/Components/UI/CallToAction";
-import { Gradient } from "../UI";
 import { useState, useRef, ReactElement } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { AnimatePresence, motion, useInView, useScroll, useTransform } from "framer-motion";
+import { Gradient } from "@/Components/UI";
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -16,6 +10,7 @@ import {
   SiFirebase,
   SiFramer,
 } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 interface projectProps {
   title: string;
@@ -110,6 +105,42 @@ const projects: projectProps[] = [
     icon3: <SiTailwindcss size={20} />,
     icon4: <FaGitAlt size={20} />,
   },
+  {
+    title: "Adviser App",
+    description:
+      "A scalable social media app with real-time chat and notifications.",
+    image: "/adviser.png",
+    link: "https://space-tour-orpin.vercel.app/",
+    tags: ["App", "React", "Node.js", "Firebase", "All"],
+    icon1: <FaReact size={20} />,
+    icon2: <SiTailwindcss size={20} />,
+    icon3: <SiJavascript size={20} />,
+    icon4: <FaGitAlt size={20} />,
+  },
+  {
+    title: "Cart",
+    description:
+      "A scalable social media app with real-time chat and notifications.",
+    image: "/cartex2.png",
+    link: "https://space-tour-orpin.vercel.app/",
+    tags: ["eCommerce", "React", "Node.js", "Firebase", "All"],
+    icon1: <FaReact size={20} />,
+    icon2: <SiTailwindcss size={20} />,
+    icon3: <SiJavascript size={20} />,
+    icon4: <FaGitAlt size={20} />,
+  },
+  {
+    title: "Todo App",
+    description:
+      "A scalable social media app with real-time chat and notifications.",
+    image: "/todo.png",
+    link: "https://space-tour-orpin.vercel.app/",
+    tags: ["App", "React", "Node.js", "Firebase", "All"],
+    icon1: <FaReact size={20} />,
+    icon2: <SiTailwindcss size={20} />,
+    icon3: <SiJavascript size={20} />,
+    icon4: <FaGitAlt size={20} />,
+  },
 ];
 
 const filter = (name: string) => {
@@ -122,9 +153,13 @@ const selector = [
   { name: "App", filter: "App" },
 ];
 
-const Projects = () => {
+const PortProjects = () => {
+  const navigate = useNavigate();
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [selected, setSelected] = useState("All");
+  const goToContact = () => {
+    navigate("/home#contact");
+  };
   const handleSelected = (name: string) => {
     setSelected(name);
   };
@@ -132,6 +167,7 @@ const Projects = () => {
   const cardRef = useRef(null);
   const textRef = useRef<HTMLDivElement>(null); // Ensure correct type
   const inView = useInView(sectionRef, { once: false });
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "start center"],
@@ -182,8 +218,7 @@ const Projects = () => {
           style={{ opacity: fade, y: moveUp }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Here are some of the projects I've worked on. Click on any project to
-          view.
+          Here are some of the projects I've worked on. Click on any project to view.
         </motion.p>
       </div>
 
@@ -210,11 +245,8 @@ const Projects = () => {
       </div>
 
       {/* Projects Section */}
-      <div
-        ref={cardRef}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        <AnimatePresence mode="popLayout">
+      <div ref={cardRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={index}
@@ -260,10 +292,11 @@ const Projects = () => {
         title="Have a project in mind?"
         description="Let's discuss your ideas and I'll help bring them to life."
         buttonText="I'm in🤝"
-        buttonLink="#contact"
+        func={goToContact}
       />
     </motion.section>
   );
 };
 
-export default Projects;
+export default PortProjects;
+

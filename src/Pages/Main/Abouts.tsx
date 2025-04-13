@@ -38,27 +38,28 @@ const Abouts = () => {
       <Gallery />
       <div className="flex flex-col justify-start items-center gap-4  mt-20 p-6 z-20">
         <h2 className="text-6xl z-20">Read on Medium</h2>
-        <div className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
+        
+        <a href="https://medium.com/@adewumime/learning-is-good-but-practicing-is-essential-lexi-combines-both-and-makes-it-fun-eb5daf67d143" target="_blank" className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
           <div className="flex flex-col gap-3">
             <p className="text-sm opacity-75">April 12 2025</p>
             <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
           </div>
           <p>2 mins read</p>
-        </div>
-        <div className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
+        </a>
+        <a href="https://medium.com/@adewumime/learning-is-good-but-practicing-is-essential-lexi-combines-both-and-makes-it-fun-eb5daf67d143" target="_blank" className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
           <div className="flex flex-col gap-3">
             <p className="text-sm opacity-75">April 12 2025</p>
             <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
           </div>
           <p>2 mins read</p>
-        </div>
-        <div className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
+        </a>
+        <a href="https://medium.com/@adewumime/learning-is-good-but-practicing-is-essential-lexi-combines-both-and-makes-it-fun-eb5daf67d143" target="_blank" className="w-full sm:w-[70%] z-20 py-8 sm:p-8 flex justify-between items-center border-b border-gray-500">
           <div className="flex flex-col gap-3">
             <p className="text-sm opacity-75">April 12 2025</p>
             <p className="text-xl font-semibold">Learning is good, but Practice? is Essential...</p>
           </div>
           <p>2 mins read</p>
-        </div>
+        </a>
       </div>
       
       <Footer />
@@ -125,11 +126,11 @@ const Left: React.FC<LeftProps> = ({ title, image, cardNumber }) => {
       }}
       className={`hidden bg-center bg-cover h-[400px] w-full z-10 text-4xl sm:flex justify-end items-center gap-4 py-4 sticky top-0 rounded-3xl`}
     >
-      <div className="absolute h-full w-full bg-black/60 rounded-3xl"></div>
-      <h2 className="z-10">{title}</h2>{" "}
-      {cardNumber === 1 && <NotebookText size={50} className="z-10" />}
-      {cardNumber === 2 && <BriefcaseBusiness size={50} className="z-10" />}
-      {cardNumber === 3 && <Palette size={50} className="z-10" />}
+      <div className="absolute h-full w-full dark:bg-black/60 rounded-3xl"></div>
+      <h2 className="z-10 text-white">{title}</h2>{" "}
+      {cardNumber === 1 && <NotebookText size={50} className="z-10 text-white" />}
+      {cardNumber === 2 && <BriefcaseBusiness size={50} className="z-10 text-white" />}
+      {cardNumber === 3 && <Palette size={50} className="z-10 text-white" />}
     </motion.div>
   );
 };
@@ -146,7 +147,7 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
     <motion.div
       animate={inView ? { y: "0", scale: 1 } : { y: "100px", scale: 0.8 }}
       transition={{ duration: 1.5 }}
-      className="bg-black/70 h-full w-[90%] z-10 rounded-3xl p-8 flex flex-col justify-start align-middle gap-6"
+      className="bg-white dark:bg-black/70 h-full w-[90%] z-10 rounded-3xl p-8 flex flex-col justify-start align-middle gap-6"
     >
       {cardNumber === 1 && (
         <h3 className="text-2xl font-semibold">Who Is Aniyajuwon</h3>
@@ -191,7 +192,7 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
                   <p className="text-sm sm:text-lg">{job.position}</p>
                   <p className="text-xs sm:text-lg">{job.company}</p>
                 </div>
-                <div className="h-[1px] w-1/2 bg-white" />{" "}
+                <div className="h-[1px] w-1/2 bg-black dark:bg-white" />{" "}
                 <p className="text-xs sm:text-sm whitespace-nowrap">
                   {job.date}
                 </p>

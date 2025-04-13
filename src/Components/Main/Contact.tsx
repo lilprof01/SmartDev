@@ -1,12 +1,23 @@
 import axios from "axios";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const location = useLocation()
   const isInView = useInView(sectionRef, { once: false });
   const [formStatus, setFormStatus] = useState("");
+
+  useEffect(() => {
+    if (location.hash === "#contact") {
+      // Wait a little if needed to ensure the DOM is rendered
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [location]);
 
   // formspree form handler
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -52,6 +63,7 @@ const Contact = () => {
   return (
     // Contact Section
     <motion.section
+    id="contact"
       ref={sectionRef}
       className="flex flex-col mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
       initial={{ opacity: 0, y: 80 }}

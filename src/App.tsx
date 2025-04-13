@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'sonner'
-import { Abouts, Home, LoadUp, Projects } from '@/Pages/Main'
+import { Abouts, Home, LoadUp, Portfolio } from '@/Pages/Main'
 import { ScrollToTop } from '@/Components/UI'
 import { useEffect } from 'react'
 import { useThemeStore } from './Stores'
@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/" element={<LoadUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<Abouts />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<Portfolio />} />
       </Routes>
     </>
   )

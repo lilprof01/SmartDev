@@ -9,6 +9,7 @@ interface Artprops {
   translate?: string;
   title: string;
   size: string;
+  bg: string;
 }
 const Art: React.FC<Artprops> = ({
   top,
@@ -18,18 +19,22 @@ const Art: React.FC<Artprops> = ({
   translate,
   title,
   size,
+  bg
 }) => {
   const targetRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(targetRef, { once: false });
+  const inView = useInView(targetRef, { once: true });
   return (
     <motion.div
       animate={inView ? { opacity: 1, y: "-200px" } : { opacity: 0, y: "0px" }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
+      transition={{ duration: 1 }}
       ref={targetRef}
-      className={`absolute ${top} ${bottom} ${left} ${right} ${translate} bg-[red] h-[300px] w-[300px] mt-10 flex flex-col justify-end items-end p-2`}
+      style={{
+        backgroundImage: `url(${bg})`,
+      }}
+      className={`absolute ${top} ${bottom} ${left} ${right} ${translate} bg-cover bg-center h-[300px] w-[300px] mt-10 flex flex-col justify-end items-end p-2`}
     >
-      <p className="text-lg font-bold">{title}</p>
-      <p className="text-xs">{size}</p>
+      <p className="text-lg font-bold bg-black/70 text-white">{title}</p>
+      <p className="text-xs bg-black/70 text-white">{size}</p>
     </motion.div>
   );
 };
