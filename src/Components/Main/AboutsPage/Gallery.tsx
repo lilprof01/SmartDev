@@ -4,7 +4,7 @@ const Gallery = () => {
   return (
     <section>
       <div className="relative h-[700vh] sm:h-[900vh] w-full bg-white dark:bg-black/60 mt-20 z-20">
-        <div className="h-[90vh] text-black dark:text-white dark:bg-black sticky top-0 flex flex-col justify-center items-center"><p className="text-lg">A few of my</p> <h2 className="text-7xl">Artworks</h2></div>
+        <div className="h-[99vh] shadow-xl text-black dark:text-white dark:bg-black sticky top-0 flex flex-col justify-center items-center"><p className="text-lg">A few of my</p> <h2 className="text-7xl">Artworks</h2></div>
           <Art top='top-1/4 sm:top-1/5' title='Afloat' size='16x24 inches' bg="/Artworks/Image.jpg" />
           <Art bottom='bottom-1/5 sm:bottom-1/4' right='lg:right-[500px] md:right-[350px] right-[0px]' title='Heritage' size='20x30 inches' bg='/Artworks/Image1.jpg' />
           <Art top='top-[800px]' right='right-[0px] sm:right-[150px]' title='Nil' size='16x20 inches' bg='/Artworks/Image2.jpg' />

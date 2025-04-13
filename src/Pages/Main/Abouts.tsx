@@ -7,7 +7,13 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
-import { NotebookText, BriefcaseBusiness, Palette, Laptop, Gamepad2 } from "lucide-react";
+import {
+  NotebookText,
+  BriefcaseBusiness,
+  Palette,
+  Laptop,
+  Gamepad2,
+} from "lucide-react";
 import { Blog, Gallery, Hero } from "@/Components/Main/AboutsPage";
 import { Divider, Gradient, ThemeToggle } from "@/Components/UI";
 
@@ -21,19 +27,19 @@ const Abouts = () => {
       <Section
         title="About Me"
         cardTitle="Bio"
-        image="https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540772/new2_xuyzci.jpg"
+        image="/LeftDiv/new2.jpg"
         cardNumber={1}
       />
       <Section
         title="Resume"
         cardTitle="Exp"
-        image="https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540771/laptop2_rrjrrs.jpg"
+        image="/LeftDiv/laptop2.jpg"
         cardNumber={2}
       />
       <Section
         title="More!!!"
         cardTitle="Fun"
-        image="https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540770/laptop1_y3yp6c.jpg"
+        image="/LeftDiv/laptop1.jpg"
         cardNumber={3}
       />
       <Gallery />
@@ -105,8 +111,12 @@ const Left: React.FC<LeftProps> = ({ title, image, cardNumber }) => {
     >
       <div className="absolute h-full w-full dark:bg-black/60 rounded-3xl"></div>
       <h2 className="z-10 text-white">{title}</h2>{" "}
-      {cardNumber === 1 && <NotebookText size={50} className="z-10 text-white" />}
-      {cardNumber === 2 && <BriefcaseBusiness size={50} className="z-10 text-white" />}
+      {cardNumber === 1 && (
+        <NotebookText size={50} className="z-10 text-white" />
+      )}
+      {cardNumber === 2 && (
+        <BriefcaseBusiness size={50} className="z-10 text-white" />
+      )}
       {cardNumber === 3 && <Palette size={50} className="z-10 text-white" />}
     </motion.div>
   );
@@ -119,8 +129,13 @@ interface RightProps {
 }
 
 import { jobs, Education } from "@/Constants/data";
+import { useNavigate } from "react-router-dom";
 
 const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
+  const navigate = useNavigate();
+  const goToContact = () => {
+    navigate("/home#contact");
+  };
   return (
     <motion.div
       animate={inView ? { y: "0", scale: 1 } : { y: "100px", scale: 0.8 }}
@@ -138,27 +153,39 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
       )}
       {cardNumber === 1 && (
         <div className="sm:text-lg flex flex-col gap-2 leading-relaxed">
-          <p>
-            Hi, my name is Aniyajuwon Oluwapelumi IyanuOluwa but you can call me Smart. I hail from a small town in the West african coast, Nigeria to be precise.
+          <p className="font-semibold">
+            Hi, my name is Aniyajuwon Oluwapelumi IyanuOluwa but you can call me
+            Smart. I hail from a small town on the West African coast — Nigeria
+            to be precise.
           </p>
           <p className="mt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum
-            quas qui nesciunt doloribus voluptatum aspernatur adipisci quos!
-            Sapiente expedita consequuntur eaque illo similique nihil vero,
-            perferendis consectetur. Possimus, nisi!
+            I’m a passionate Frontend Developer with a deep love for crafting
+            sleek, interactive, and user-focused web experiences. My journey
+            into tech started with curiosity and quickly grew into a full-blown
+            dedication to learning how beautiful, responsive interfaces come to
+            life — from layout to logic.
           </p>
           <p className="mt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum
-            quas qui nesciunt doloribus voluptatum aspernatur adipisci quos!
-            Sapiente expedita consequuntur eaque illo similique nihil vero,
-            perferendis consectetur. Possimus, nisi!
+            Over the years, I’ve built and collaborated on projects that
+            involved technologies like React, Tailwind CSS, Javascript,
+            Typescript and Framer Motion. I love translating ideas into
+            pixel-perfect designs, but more than that, I enjoy making interfaces
+            feel intuitive and enjoyable to use. I pay special attention to
+            animation, accessibility, and performance because I believe great
+            user experience is a balance of form and function.
           </p>
           <p className="mt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum
-            quas qui nesciunt doloribus voluptatum aspernatur adipisci quos!
-            Sapiente expedita consequuntur eaque illo similique nihil vero,
-            perferendis consectetur. Possimus, nisi!
+            When I’m not coding, I am either Creating timepieces on canvas or
+            exploring UI trends for future inspirations, or learning new tools,
+            or simply sharing my knowledge with others in the dev community.
+            Every project I take on teaches me something new — whether it’s
+            improving code structure, enhancing page speed, or finding clever
+            ways to solve layout challenges. My ultimate goal is to create
+            digital products that not only look great but also solve real
+            problems. And I’m constantly learning, iterating, and improving to
+            make that happen.
           </p>
+          <p className="mt-5 font-bold"><span className="text-blue-600">&lt;/</span>one line of code after the other<span className="text-blue-600">&gt;</span></p>
         </div>
       )}
       {cardNumber === 2 && (
@@ -196,9 +223,46 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
       )}
       {cardNumber === 3 && (
         <div>
-          <p><span className="text-lg font-semibold flex items-center gap-1">Tech <Laptop size={20} /></span> - I extremely love to write code, but I doubt codes share the same love for me. I have absolutely no background at all in tech, as matter of fact I studied Agric, funny right? But I developed a passion for tech and I nurtured that passion and protected it, and today I am slowly able to build things I used to see on the net and marvel at.</p>
-          <p className="mt-10"><span className="text-lg font-semibold flex items-center gap-1">Art <Palette size={20} /></span> - I am an artist by talent, and by constant practice of course. I love to paint, draw, sketch, name it-- and closing on a decade of Experience on that. I have a little gallery showcasing a few of my artworks right below this section, feel free to check it out, and bid for one if you'd love to collect.</p>
-          <p className="mt-10"><span className="text-lg font-semibold flex items-center gap-1">Games <Gamepad2 size={20} /></span> - Oh I love games, games have been embedded into my system since I was, say 7 years old. Games have been a great part of my growth and mental development, I started out with games like Tetris in the early 20's and have since then grown to love strategic games like chess, mancala and the likes. Yes I play mordern games like the viral CODM and as a matter of fact if you'd like to go at a 1v1 with me, just hmu from my contacts section.</p>
+          <p>
+            <span className="text-lg font-semibold flex items-center gap-1">
+              Tech <Laptop size={20} />
+            </span>{" "}
+            - I extremely love to write code, but I doubt codes share the same
+            love for me. I have absolutely no background at all in tech, as a
+            matter of fact I studied Agric, funny right? But I developed a
+            passion for tech and I nurtured that passion and protected it, and
+            today I am slowly able to build things I used to see on the net and
+            marvel at.
+          </p>
+          <p className="mt-10">
+            <span className="text-lg font-semibold flex items-center gap-1">
+              Art <Palette size={20} />
+            </span>{" "}
+            - I am an artist by talent, and by constant practice of course. I
+            love to paint, draw, sketch, name it-- and closing on a decade of
+            Experience on that. I have a little gallery showcasing a few of my
+            artworks right below this section, feel free to check it out, and
+            bid for one if you'd love to collect🤝.
+          </p>
+          <p className="mt-10">
+            <span className="text-lg font-semibold flex items-center gap-1">
+              Games <Gamepad2 size={20} />
+            </span>{" "}
+            - Oh I love games, games have been embedded into my system since I
+            was, say 4 or 5 years old. Games have been a great part of my growth
+            and mental development, I started out with games like Tetris in the
+            early 20's and have since then grown to love strategic games like
+            chess, mancala and the likes. Yes I play mordern games like the
+            viral CODM and as a matter of fact if you'd like to go at a 1v1 with
+            me, just hmu from my{" "}
+            <span
+              onClick={goToContact}
+              className="underline hover:text-blue-600 cursor-pointer transition-all duration-300"
+            >
+              contact section
+            </span>
+            .
+          </p>
         </div>
       )}
     </motion.div>

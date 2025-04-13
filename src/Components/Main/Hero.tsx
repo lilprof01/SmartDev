@@ -34,7 +34,7 @@ const Hero = () => {
         Get Started
       </motion.button>
       <motion.div
-        className="h-[60vh] w-full bg-[url('https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744540449/code_rkilcx.jpg')] bg-cover bg-center shadow-2xl rounded-2xl mt-10 z-10"
+        className="h-[60vh] w-full bg-[url('/Hero/code.jpg')] bg-cover bg-center shadow-2xl rounded-2xl mt-10 z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8 }}

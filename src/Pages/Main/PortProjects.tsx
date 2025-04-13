@@ -30,7 +30,7 @@ const projects: projectProps[] = [
     title: "WoodMetal",
     description:
       "A fully functional e-commerce platform with payment integration.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538761/wm2_ayn43t.png",
+    image: "/Portfolio/wm2.png",
     link: "https://woodmetal.vercel.app/",
     tags: ["eCommerce", "React", "Node.js", "Stripe", "All"],
     icon1: <FaReact size={20} />,
@@ -42,7 +42,7 @@ const projects: projectProps[] = [
     title: "My Portfolio",
     description:
       "A sleek and modern portfolio website to showcase my skills and expertise.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/portfolio_zlhxws.png",
+    image: "/Portfolio/portfolio.png",
     link: "/",
     tags: [
       "Portfolio",
@@ -61,7 +61,7 @@ const projects: projectProps[] = [
     title: "PAYXYZ",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538764/xyzhome_myozd9.png",
+    image: "/Portfolio/xyzhome.png",
     link: "https://payxyz.vercel.app/",
     tags: ["Fintech", "HTML", "CSS", "Vanila JS", "All"],
     icon1: <FaHtml5 size={20} />,
@@ -73,7 +73,7 @@ const projects: projectProps[] = [
     title: "lexi",
     description:
       "A language practice web app with interactive quizzes and games.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538759/lexi3_lnbwqj.png",
+    image: "/Portfolio/lexi3.png",
     link: "https://lexi-flax.vercel.app/",
     tags: ["React", "Firebase", "Markdown", "All", "App"],
     icon1: <FaReact size={20} />,
@@ -85,7 +85,7 @@ const projects: projectProps[] = [
     title: " AutoWorld",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/AutoWorld_y9ebfb.png",
+    image: "/Portfolio/AutoWorld.png",
     link: "https://aw-landing.vercel.app/",
     tags: ["React", "TailwindCSS", "All", "Landing page"],
     icon1: <FaReact size={20} />,
@@ -97,7 +97,7 @@ const projects: projectProps[] = [
     title: "Space Tour",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/space-tour_f0luew.png",
+    image: "/Portfolio/space-tour.png",
     link: "https://space-tour-orpin.vercel.app/",
     tags: ["React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
@@ -109,7 +109,7 @@ const projects: projectProps[] = [
     title: "Adviser App",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538759/adviser_iaqtze.png",
+    image: "/Portfolio/adviser.png",
     link: "https://adviser-ten.vercel.app/",
     tags: ["App", "React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
@@ -121,7 +121,7 @@ const projects: projectProps[] = [
     title: "Cart",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/cartex2_vqyq92.png",
+    image: "/Portfolio/cartex2.png",
     link: "https://cart-ex.vercel.app/",
     tags: ["eCommerce", "React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
@@ -133,7 +133,7 @@ const projects: projectProps[] = [
     title: "Todo App",
     description:
       "A scalable social media app with real-time chat and notifications.",
-    image: "https://res.cloudinary.com/dzvqnpdqo/image/upload/q_auto,f_auto/v1744538760/todo_fgkoqh.png",
+    image: "/Portfolio/todo.png",
     link: "https://to-do-ashen-chi.vercel.app/",
     tags: ["App", "React", "Node.js", "Firebase", "All"],
     icon1: <FaReact size={20} />,
