@@ -65,7 +65,7 @@ const Contact = () => {
     <motion.section
     id="contact"
       ref={sectionRef}
-      className="flex flex-col mt-20 max-w-7xl mx-auto px-4 sm:px-8 z-10"
+      className="flex flex-col pt-36 max-w-7xl mx-auto px-4 sm:px-8 z-10"
       initial={{ opacity: 0, y: 80 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
       transition={{ duration: 1 }}
