@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="flex mt-20 bg-blue-700 text-white dark:bg-gray-900 py-8 z-10">
         <div className="w-full px-4 sm:px-8 flex flex-row justify-between items-center z-20">
           <p className="text-sm">
-            © {new Date().getFullYear()} Your Company. All rights reserved.
+            © {new Date().getFullYear()} Aniyajuwon. All rights reserved.
           </p>
 
           <div className="flex gap-4 z-10">

@@ -43,7 +43,7 @@ const Gallery = () => {
         />
         <Art
           top="top-1/2"
-          left="left-[60px] sm:left-[50px]"
+          left="left-[0px] sm:left-[50px]"
           title="Adumasha"
           size="22x30 inches"
           bg="/Artworks/Image3.jpg"

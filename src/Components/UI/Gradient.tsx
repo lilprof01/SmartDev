@@ -5,4 +5,4 @@ const Gradient = () => {
   )
 }
 
-export default Gradient
+export default Gradient;

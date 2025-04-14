@@ -22,7 +22,7 @@ const About = () => {
         opacity: fade,
         scale: scale,
       }}
-      className="mt-20 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col z-10"
+      className="mt-20  mx-auto px-4 sm:px-8 flex flex-col z-10"
       transition={{
         delay: 3,
       }}
@@ -46,7 +46,7 @@ const About = () => {
         exceeds client's expectations. Let me help transform your ideas into
         reality and take your business to the next level.
       </p>
-      <Link to='/about' className="mt-10 mx-auto w-1/2 sm:w-1/3 text-right text-xl py-3 check relative overflow-hidden flex justify-center items-center align-middle whitespace-nowrap hover:text-blue-700 cursor-pointer transition-all duration-300 z-10">
+      <Link to='/about' className="mt-10 mx-auto w-1/2 sm:w-1/3 text-right text-xl py-3 check relative flex justify-center items-center align-middle whitespace-nowrap hover:text-blue-700 cursor-pointer transition-all duration-300 z-10">
         <p>More about me</p>
       </Link>
     </motion.section>

@@ -185,7 +185,7 @@ const PortProjects = () => {
       ref={sectionRef}
       style={{ opacity: fade }}
       transition={{ duration: 0.15 }}
-      className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black p-8 sm:p-16 transition-all duration-500 z-10"
+      className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black py-8 px-4 sm:p-16 transition-all duration-500 z-10"
     >
       <Gradient />
 
@@ -195,10 +195,10 @@ const PortProjects = () => {
         className="flex flex-col items-center justify-start gap-2 h-full w-full text-center sm:p-8 lg:max-w-4/6 mx-auto select-none"
       >
         <motion.h1
-          className="font-bold text-4xl sm:text-6xl overflow-hidden whitespace-nowrap"
+          className="font-bold text-4xl sm:text-5xl"
           style={{ opacity: fade, y: moveDown }}
-          initial={{ width: "0" }}
-          animate={inView ? { width: "100%" } : { width: "0" }}
+          // initial={{ width: "0" }}
+          // animate={inView ? { width: "100%" } : { width: "0" }}
           transition={{ duration: 2, delay: 0.3 }}
         >
           Explore{" "}
@@ -261,7 +261,7 @@ const PortProjects = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover object-center"
+                className="w-full object-cover object-center"
               />
               <div className="p-6 flex flex-col text-center justify-between items-center">
                 <h3 className="text-xl font-bold group-hover:text-blue-700 dark:group-hover:text-blue-500 transition-colors duration-300">
@@ -278,7 +278,7 @@ const PortProjects = () => {
                   <a
                     href={project.link}
                     target="_blank"
-                    className="hover:text-blue-600 underline transition-all duration-300 text-xs w-full"
+                    className="hover:text-blue-600 underline transition-all duration-300 text-xs w-full text-right"
                   >
                     View Project
                   </a>

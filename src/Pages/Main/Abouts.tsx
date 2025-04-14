@@ -140,7 +140,7 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
     <motion.div
       animate={inView ? { y: "0", scale: 1 } : { y: "100px", scale: 0.8 }}
       transition={{ duration: 1.5 }}
-      className="bg-white dark:bg-black/70 h-full w-[90%] z-10 rounded-3xl p-8 flex flex-col justify-start align-middle gap-6"
+      className="bg-white dark:bg-black/70 h-full w-full z-10 rounded-3xl p-8 flex flex-col justify-start align-middle gap-6"
     >
       {cardNumber === 1 && (
         <h3 className="text-2xl font-semibold">Who Is Aniyajuwon</h3>
@@ -206,8 +206,8 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
           </ul>
 
           <div className="mt-20">
-            <h3 className="text-2xl font-semibold">Education</h3>
-            <ul className="text-xl flex flex-col justify-between align-middle gap-8 whitespace-nowrap">
+            {/* <h3 className="text-2xl font-semibold">Education</h3> */}
+            <ul className="text-xl flex flex-col justify-between align-middle gap-8">
               {Education.map((edu) => (
                 <li className="flex justify-between items-center gap-2">
                   <div className="">
