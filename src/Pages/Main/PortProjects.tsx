@@ -246,7 +246,7 @@ const PortProjects = () => {
         </ul>
       </div>
 
-      {/* Projects Section */}
+      {/* Project Section */}
       <div ref={cardRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
