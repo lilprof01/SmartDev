@@ -1,6 +1,6 @@
 import CallToAction from "@/Components/UI/CallToAction";
 import { useState, useRef, ReactElement } from "react";
-import { AnimatePresence, motion, useInView, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { Gradient } from "@/Components/UI";
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
 import {
@@ -167,8 +167,7 @@ const PortProjects = () => {
   };
   const sectionRef = useRef(null);
   const cardRef = useRef(null);
-  const textRef = useRef<HTMLDivElement>(null); // Ensure correct type
-  const inView = useInView(sectionRef, { once: false });
+  const textRef = useRef<HTMLDivElement>(null); //
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,

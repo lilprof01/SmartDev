@@ -4,7 +4,6 @@ import { useState, useRef, ReactElement } from "react";
 import {
   AnimatePresence,
   motion,
-  useInView,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -130,8 +129,7 @@ const Projects = () => {
   };
   const sectionRef = useRef(null);
   const cardRef = useRef(null);
-  const textRef = useRef<HTMLDivElement>(null); // Ensure correct type
-  const inView = useInView(sectionRef, { once: false });
+  const textRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "start center"],
@@ -159,8 +157,6 @@ const Projects = () => {
         <motion.h1
           className="font-bold text-4xl sm:text-6xl overflow-hidden"
           style={{ opacity: fade, y: moveDown }}
-          // initial={{ width: "0" }}
-          // animate={inView ? { width: "100%" } : { width: "0" }}
           transition={{ duration: 2, delay: 0.3 }}
         >
           Explore{" "}
