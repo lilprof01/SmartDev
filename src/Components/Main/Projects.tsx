@@ -33,7 +33,7 @@ const projects: projectProps[] = [
   {
     title: "WoodMetal",
     description:
-      "A fully functional e-commerce platform with payment integration.",
+      "An ecommerce website made with ReactJs and styled with Tailwind.",
     image: "/Portfolio/wm2.png",
     link: "https://woodmetal.vercel.app/",
     tags: ["eCommerce", "React", "Node.js", "Stripe", "All"],
@@ -64,7 +64,7 @@ const projects: projectProps[] = [
   {
     title: "PAYXYZ",
     description:
-      "A scalable social media app with real-time chat and notifications.",
+      "A scalable fintech app website built for a startup, utilizing React and Tailwind.",
     image: "/Portfolio/xyzhome.png",
     link: "https://payxyz.vercel.app/",
     tags: ["Fintech", "HTML", "CSS", "Vanila JS", "All"],
@@ -88,7 +88,7 @@ const projects: projectProps[] = [
   {
     title: " AutoWorld",
     description:
-      "A scalable social media app with real-time chat and notifications.",
+      "A captivating landing page for an Auto company, with modern design and animations.",
     image: "/Portfolio/AutoWorld.png",
     link: "https://aw-landing.vercel.app/",
     tags: ["React", "TailwindCSS", "All", "Landing page"],
@@ -100,7 +100,7 @@ const projects: projectProps[] = [
   {
     title: "Space Tour",
     description:
-      "A scalable social media app with real-time chat and notifications.",
+      "A website for intending space explorers, showcasing my frontend skills.",
     image: "/Portfolio/space-tour.png",
     link: "https://space-tour-orpin.vercel.app/",
     tags: ["React", "Node.js", "Firebase", "All"],
