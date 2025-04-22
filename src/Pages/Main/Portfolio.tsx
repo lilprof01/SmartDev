@@ -1,5 +1,5 @@
 import { Footer, Header } from "@/Components/Main"
-import { Gradient } from "@/Components/UI"
+import { Gradient, ThemeToggle } from "@/Components/UI"
 import Stack from "@/Components/Main/Stack"
 import PortProjects from "./PortProjects"
 
@@ -9,10 +9,10 @@ const Portfolio = () => {
     <main className="relative dark:bg-black p-8 sm:pt-16 sm:px-16 transition-all duration-500">
       <Header />
       <Gradient />
-
       <PortProjects />
       <Stack />
       <Footer />
+      <ThemeToggle className="fixed bottom-5 right-5 sm:hidden hover:cursor-pointer" />
     </main>
   )
 }

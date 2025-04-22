@@ -1,30 +1,20 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const About = () => {
   const sectionRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "start center"],
-  });
-
-  const fade = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const inView = useInView(sectionRef, {once: false})
 
   return (
     // About me section
     // TODO: add a button that asks to know more about me
     <motion.section
       ref={sectionRef}
-      style={{
-        opacity: fade,
-        scale: scale,
-      }}
+      animate={inView ? {y: "0px", opacity: 1} : {y: "100px", opacity: 0}}
       className="mt-20  mx-auto px-4 sm:px-8 flex flex-col z-10"
       transition={{
-        delay: 3,
+        duration: 1
       }}
     >
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 z-10">

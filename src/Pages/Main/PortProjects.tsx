@@ -84,7 +84,7 @@ const projects: projectProps[] = [
   {
     title: " AutoWorld",
     description:
-      "A captivating landing page for an Auto company, with modern design and animations.",
+      "A captivating landing page for an Auto company, with modern style.",
     image: "/Portfolio/AutoWorld.png",
     link: "https://aw-landing.vercel.app/",
     tags: ["React", "TailwindCSS", "All", "Landing page"],

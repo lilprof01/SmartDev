@@ -1,12 +1,7 @@
 import CallToAction from "@/Components/UI/CallToAction";
 import { Gradient } from "../UI";
 import { useState, useRef, ReactElement } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -88,7 +83,7 @@ const projects: projectProps[] = [
   {
     title: " AutoWorld",
     description:
-      "A captivating landing page for an Auto company, with modern design and animations.",
+      "A captivating landing page for an Auto company, with modern style.",
     image: "/Portfolio/AutoWorld.png",
     link: "https://aw-landing.vercel.app/",
     tags: ["React", "TailwindCSS", "All", "Landing page"],
@@ -128,55 +123,35 @@ const Projects = () => {
     setSelected(name);
   };
   const sectionRef = useRef(null);
-  const cardRef = useRef(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "start center"],
-  });
-
-  // Animation for the section container and children
-  const fade = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
-  const moveUp = useTransform(scrollYProgress, [0, 1], ["80%", "0%"]);
-  const moveDown = useTransform(scrollYProgress, [0, 1], ["-80%", "0%"]);
+  const inView = useInView(sectionRef, { once: false });
 
   return (
     <motion.section
       ref={sectionRef}
-      style={{ opacity: fade }}
-      transition={{ duration: 0.15 }}
       className="mt-20 relative bg-gradient-to-br from-blue-200 to-white dark:from-blue-950 dark:via-black dark:to-black py-8 px-4 sm:p-16 transition-all duration-500 z-10"
     >
       <Gradient />
 
       {/* Hero Section */}
-      <div
-        ref={textRef} // Ensure textRef is assigned here
-        className="flex flex-col items-center justify-start gap-2 h-full w-full text-center sm:p-8 lg:max-w-4/6 mx-auto select-none"
-      >
+      <div className="flex flex-col items-center justify-start gap-2 h-full w-full text-center sm:p-8 lg:max-w-4/6 mx-auto select-none">
         <motion.h1
           className="font-bold text-4xl sm:text-6xl overflow-hidden"
-          style={{ opacity: fade, y: moveDown }}
-          transition={{ duration: 2, delay: 0.3 }}
+          animate={
+            inView ? { y: "0px", opacity: 1 } : { y: "-30px", opacity: 0 }
+          }
+          transition={{ duration: 1, delay: 0.4 }}
         >
           Explore{" "}
-          <motion.span
-            style={{
-              overflow: "hidden",
-              whiteSpace: "nowrap",
-            }}
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
-            className="bg-gradient-to-r from-blue-700 to-blue-900 dark:from-blue-700 dark:to-blue-700 bg-clip-text text-transparent hover:text-blue-900 dark:hover:text-blue-900 transition-all duration-500 cursor-pointer"
-          >
+          <motion.span className="bg-gradient-to-r from-blue-700 to-blue-900 dark:from-blue-700 dark:to-blue-700 bg-clip-text text-transparent hover:text-blue-900 dark:hover:text-blue-900 transition-all duration-500 cursor-pointer">
             Projects
           </motion.span>
         </motion.h1>
         <motion.p
           className="text-sm sm:text-xl mt-4"
-          style={{ opacity: fade, y: moveUp }}
-          transition={{ duration: 1, delay: 0.3 }}
+          animate={
+            inView ? { y: "0px", opacity: 1 } : { y: "50px", opacity: 0 }
+          }
+          transition={{ duration: 1, delay: 0.6 }}
         >
           Here are some of the projects I've worked on. Click on any project to
           view.
@@ -206,10 +181,7 @@ const Projects = () => {
       </div>
 
       {/* Projects Section */}
-      <div
-        ref={cardRef}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
             <motion.div
