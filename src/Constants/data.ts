@@ -27,19 +27,19 @@ interface JobsList {
 
 export const jobs: JobsList[] = [
     {
-        position: "Frontend Developer",
-        company: "Doyen",
-        date: "2025"
+        position: "Fullstack Dev",
+        company: "Doyenify",
+        date: "May 2025"
     },
     {
-        position: "Frontend Developer",
-        company: "Cyberbuddies",
-        date: "2024 - 2025"
+        position: "Frontend Dev",
+        company: "Doyenify",
+        date: "Jan-May, 2025"
     },
     {
-        position: "Frontend Developer",
+        position: "Frontend Dev",
         company: "FFS Agritech",
-        date: "2024"
+        date: "Apr-Jul, 2024"
     },
     {
         position: "Asst. Manager",

@@ -206,7 +206,7 @@ const Right: React.FC<RightProps> = ({ inView, cardNumber }) => {
           </ul>
 
           <div className="mt-20">
-            {/* <h3 className="text-2xl font-semibold">Education</h3> */}
+            <h3 className="text-2xl font-semibold mb-5">Education</h3>
             <ul className="text-xl flex flex-col justify-between align-middle gap-8">
               {Education.map((edu) => (
                 <li className="flex justify-between items-center gap-2">
