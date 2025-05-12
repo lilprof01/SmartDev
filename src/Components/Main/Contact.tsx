@@ -63,7 +63,7 @@ const Contact = () => {
   return (
     // Contact Section
     <motion.section
-    id="contact"
+      id="contact"
       ref={sectionRef}
       className="flex flex-col pt-36 max-w-7xl mx-auto px-4 sm:px-8 z-10"
       initial={{ opacity: 0, y: 80 }}
