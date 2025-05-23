@@ -45,7 +45,7 @@ const projects: projectProps[] = [
     image: "/Portfolio/portfolio.png",
     link: "/",
     tags: [
-      "Portfolio",
+      "portfolio",
       "React",
       "Tailwind CSS",
       "Zustand",
@@ -104,6 +104,18 @@ const projects: projectProps[] = [
     icon2: <SiTypescript size={20} />,
     icon3: <SiTailwindcss size={20} />,
     icon4: <FaGitAlt size={20} />,
+  },
+  {
+    title: "Graced",
+    description:
+      "A portfolio website for a freelance Project manager, showcasing her skills.",
+    image: "/Portfolio/graced.png",
+    link: "https://graced.vercel.app/",
+    tags: ["portfolio", "React", "All"],
+    icon1: <FaReact size={20} />,
+    icon2: <SiTypescript size={20} />,
+    icon3: <SiTailwindcss size={20} />,
+    icon4: <SiFramer size={20} />,
   },
   {
     title: "Adviser App",
@@ -246,7 +258,7 @@ const PortProjects = () => {
       </div>
 
       {/* Project Section */}
-      <div ref={cardRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div ref={cardRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
             <motion.div
